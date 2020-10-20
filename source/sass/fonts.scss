@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url("../fonts/Firasansregular.woff2") format("woff2"), url("../fonts/Firasansregular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url("../fonts/Firasansmedium.woff2") format("woff2"), url("../fonts/Firasansmedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url("../fonts/Firasansbold.woff2") format("woff2"), url("../fonts/Firasansbold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/montserratbold.woff2") format("woff2"), url("../fonts/montserratbold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"), url("../fonts/ralewayextrabold.woff2") format("woff2"), url("../fonts/ralewayextrabold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Black"), local("Raleway-Black"), url("../fonts/ralewayblack.woff2") format("woff2"), url("../fonts/ralewayblack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
