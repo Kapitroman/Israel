@@ -3,21 +3,21 @@
   max-width: 1366px;
   min-height: 906px;
   margin: 0 auto;
-  padding-top: 32px;
-  background-color: #ffffff;
+  background-color: #f0af77;
   font-family: "Fira Sans", "Verdana", sans-serif;
   background-image: url("../img/hero-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 0;
+}
 
-  @media (min-resolution: 144dpi),
-    (min-resolution: 1.5dppx) {
-    .page-header {
-      background-image: url("../img/hero-desktop@2x.jpg");
-    }
+@media (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .page-header {
+    background-image: url("../img/hero-desktop@2x.jpg");
   }
 }
+
 
 .page-header__main-nav {
   display: flex;
@@ -29,6 +29,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 458px;
+  padding-top: 32px;
   font-size: 15px;
   font-weight: 500;
   line-height: 18px;
@@ -83,34 +84,34 @@
 @media (max-width: 1023px) {
   .page-header {
     min-height: 649px;
-    padding-top: 26px;
     background-image: url("../img/hero-tablet@1x.jpg");
+  }
 
-    @media (min-resolution: 144dpi),
-      (min-resolution: 1.5dppx) {
-      .page-header {
-        background-image: url("../img/hero-tablet@2x.jpg");
-      }
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .page-header {
+      background-image: url("../img/hero-tablet@2x.jpg");
     }
   }
 
+
   .page-header__main-nav {
     margin-bottom: 318px;
+    padding-top: 26px;
   }
 }
 
 @media (max-width: 767px) {
   .page-header {
     min-height: 637px;
-    padding-top: 20px;
     background-image: url("../img/hero-mobile@1x.jpg");
     background-position: 50% 32px;
+  }
 
-    @media (min-resolution: 144dpi),
-      (min-resolution: 1.5dppx) {
-      .page-header {
-        background-image: url("../img/hero-mobile@2x.jpg");
-      }
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .page-header {
+      background-image: url("../img/hero-mobile@2x.jpg");
     }
   }
 
@@ -119,16 +120,18 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 272px;
+    padding-top: 20px;
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
+    background-color: #ffffff;
   }
 
   .page-header__logo {
     position: absolute;
     width: 120px;
     height: 42px;
-    top: 0;
+    top: 20px;
     left: 16px;
   }
 
@@ -164,16 +167,15 @@
   .page-header {
     width: 320px;
     min-height: 637px;
-    padding-top: 20px;
     background-image: url("../img/hero-320@1x.jpg");
     background-position: 50% 32px;
     background-size: 100% auto;
+  }
 
-    @media (min-resolution: 144dpi),
-      (min-resolution: 1.5dppx) {
-      .page-header {
-        background-image: url("../img/hero-320@2x.jpg");
-      }
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .page-header {
+      background-image: url("../img/hero-320@2x.jpg");
     }
   }
 }

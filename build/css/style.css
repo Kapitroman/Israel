@@ -50,7 +50,7 @@ img {
 
 @font-face {
   font-family: "Montserrat";
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/montserratbold.woff2") format("woff2"), url("../fonts/montserratbold.woff") format("woff");
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap; }
@@ -74,16 +74,16 @@ img {
   max-width: 1366px;
   min-height: 906px;
   margin: 0 auto;
-  padding-top: 32px;
-  background-color: #ffffff;
+  background-color: #f0af77;
   font-family: "Fira Sans", "Verdana", sans-serif;
   background-image: url("../img/hero-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 0; }
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .page-header .page-header {
-      background-image: url("../img/hero-desktop@2x.jpg"); } }
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .page-header {
+    background-image: url("../img/hero-desktop@2x.jpg"); } }
 
 .page-header__main-nav {
   display: -webkit-box;
@@ -102,6 +102,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 458px;
+  padding-top: 32px;
   font-size: 15px;
   font-weight: 500;
   line-height: 18px; }
@@ -151,25 +152,26 @@ img {
 @media (max-width: 1023px) {
   .page-header {
     min-height: 649px;
-    padding-top: 26px;
     background-image: url("../img/hero-tablet@1x.jpg"); } }
-  @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
-    .page-header .page-header {
-      background-image: url("../img/hero-tablet@2x.jpg"); } }
+
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
+  .page-header {
+    background-image: url("../img/hero-tablet@2x.jpg"); } }
 
 @media (max-width: 1023px) {
   .page-header__main-nav {
-    margin-bottom: 318px; } }
+    margin-bottom: 318px;
+    padding-top: 26px; } }
 
 @media (max-width: 767px) {
   .page-header {
     min-height: 637px;
-    padding-top: 20px;
     background-image: url("../img/hero-mobile@1x.jpg");
     background-position: 50% 32px; } }
-  @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
-    .page-header .page-header {
-      background-image: url("../img/hero-mobile@2x.jpg"); } }
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .page-header {
+    background-image: url("../img/hero-mobile@2x.jpg"); } }
 
 @media (max-width: 767px) {
   .page-header__main-nav {
@@ -182,14 +184,16 @@ img {
         -ms-flex-align: center;
             align-items: center;
     margin-bottom: 272px;
+    padding-top: 20px;
     font-size: 14px;
     font-weight: 500;
-    line-height: 17px; }
+    line-height: 17px;
+    background-color: #ffffff; }
   .page-header__logo {
     position: absolute;
     width: 120px;
     height: 42px;
-    top: 0;
+    top: 20px;
     left: 16px; }
   .page-header__tel {
     margin-top: 0;
@@ -217,10 +221,57 @@ img {
   .page-header {
     width: 320px;
     min-height: 637px;
-    padding-top: 20px;
     background-image: url("../img/hero-320@1x.jpg");
     background-position: 50% 32px;
     background-size: 100% auto; } }
-  @media (max-width: 320px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 320px) and (min-resolution: 144dpi), (max-width: 320px) and (min-resolution: 1.5dppx) {
-    .page-header .page-header {
-      background-image: url("../img/hero-320@2x.jpg"); } }
+
+@media (max-width: 320px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 320px) and (min-resolution: 144dpi), (max-width: 320px) and (min-resolution: 1.5dppx) {
+  .page-header {
+    background-image: url("../img/hero-320@2x.jpg"); } }
+
+h2 {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: -0.02em;
+  color: #1fc0fc;
+  text-transform: uppercase;
+  background-color: coral; }
+
+.about-program {
+  background-color: aquamarine; }
+
+.about-program h2 {
+  text-align: center; }
+
+.about-program p {
+  width: 720px;
+  margin: 0 auto;
+  font-family: "Fira Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #484848;
+  background-color: chartreuse; }
+
+.about-program div {
+  min-height: 604px;
+  background-image: url("../img/about-program-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0; }
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .about-program div {
+    background-image: url("../img/about-program-desktop@2x.jpg"); } }
+
+.about-program svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translateY(227px);
+          transform: translateY(227px); }

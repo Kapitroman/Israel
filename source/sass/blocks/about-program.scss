@@ -1,0 +1,42 @@
+.about-program {
+  background-color: aquamarine;
+}
+
+.about-program h2 {
+  text-align: center;
+}
+
+.about-program p {
+  width: 720px;
+  margin: 0 auto;
+  font-family: "Fira Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #484848;
+  background-color: chartreuse;
+}
+
+.about-program div {
+  min-height: 604px;
+  background-image: url("../img/about-program-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+}
+
+@media (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .about-program div {
+    background-image: url("../img/about-program-desktop@2x.jpg");
+  }
+}
+
+.about-program svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(227px);
+}
