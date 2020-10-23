@@ -1,7 +1,7 @@
 .page-header {
   width: 100%;
   max-width: 1366px;
-  min-height: 906px;
+  min-height: 896px;
   margin: 0 auto;
   background-color: #f0af77;
   font-family: "Fira Sans", "Verdana", sans-serif;
@@ -103,7 +103,7 @@
 
 @media (max-width: 767px) {
   .page-header {
-    min-height: 637px;
+    min-height: 633px;
     background-image: url("../img/hero-mobile@1x.jpg");
     background-position: 50% 32px;
   }
@@ -166,7 +166,6 @@
 @media (max-width: 320px) {
   .page-header {
     width: 320px;
-    min-height: 637px;
     background-image: url("../img/hero-320@1x.jpg");
     background-position: 50% 32px;
     background-size: 100% auto;

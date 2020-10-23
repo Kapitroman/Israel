@@ -1,26 +1,25 @@
-.about-program {
-  background-color: aquamarine;
-}
-
 .about-program h2 {
   text-align: center;
+  margin-bottom: 24px;
 }
 
 .about-program p {
-  width: 720px;
+  max-width: 740px;
   margin: 0 auto;
-  font-family: "Fira Sans";
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Fira Sans", "Verdana", sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 29px;
   letter-spacing: 0;
   text-align: center;
   color: #484848;
-  background-color: chartreuse;
 }
 
-.about-program div {
-  min-height: 604px;
+.about-program > div {
+  display: flex;
+  height: 604px;
   background-image: url("../img/about-program-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,14 +28,75 @@
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
-  .about-program div {
+  .about-program > div {
     background-image: url("../img/about-program-desktop@2x.jpg");
   }
 }
 
-.about-program svg {
+.about-program a {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  transform: translateY(227px);
+  position: relative;
+  margin: auto;
+  margin-top: 227px;
+}
+
+.about-program a:focus {
+  outline: 1px solid #1fc0fc;
+}
+
+.about-program a:active svg {
+  fill: #f4f4f4;
+  fill-opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  .about-program p {
+    max-width: 513px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+  }
+
+  .about-program > div {
+    margin-top: -45px;
+    height: 317px;
+    background-image: url("../img/about-program-mobile@1x.jpg");
+    background-size: 493px auto;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .about-program > div {
+      background-image: url("../img/about-program-mobile@2x.jpg");
+      background-size: 493px auto;
+    }
+  }
+
+  .about-program a {
+    margin-top: 173px;
+  }
+
+  .about-program a svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .about-program p {
+    width: 308px;
+  }
+
+  .about-program > div {
+    background-image: url("../img/about-program-320@1x.jpg");
+    background-size: 320px auto;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .about-program > div {
+      background-image: url("../img/about-program-320@2x.jpg");
+      background-size: 320px auto;
+    }
+  }
 }
