@@ -29,3 +29,13 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.modal-show {
+  display: block;
+}
+
+.body-lock {
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 16px;
+}

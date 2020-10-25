@@ -16,7 +16,12 @@
 </head>
 <body>
   <div style="display:none">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-play" viewBox="0 0 80 80">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-checkmark" viewBox="0 0 71 64">
+<rect x="3" y="3" width="58" height="58" rx="29" stroke="#FFD701" stroke-width="6"></rect>
+<path d="M18 27.88L32.1972 43L66 7" stroke="#FFD701" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol><symbol id="icon-close" viewBox="0 0 18 17">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.48467 8.5L0 1.50703L1.41767 2.46254e-07L9 7.08422L16.5823 0L18 1.50703L10.5153 8.5L18 15.493L16.5823 17L9 9.91578L1.41767 17L6.13436e-07 15.493L7.48467 8.5Z" fill="#ffc341"></path>
+</symbol><symbol id="icon-play" viewBox="0 0 80 80">
 <circle opacity="0.32" cx="40" cy="40" r="40" fill="white"></circle>
 <circle cx="40" cy="40" r="26.6667" fill="white"></circle>
 <path d="M48.3334 39.5834L35.8334 47.5V31.6667L48.3334 39.5834Z" fill="#1FC0FC"></path>
@@ -39,7 +44,7 @@
       <h2>о программе</h2>
       <p>«Маса» — совместный проект правительства Израиля и Еврейского агентства Сохнут. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Более 250 учебных программ (60 на русском) и возможность стажировки в Израиле.&nbsp;&nbsp; В течение освоения программ предусмотрен грант от 4200 до 8400$.</p>
       <div>
-        <a href="#" class="about-program__play">
+        <a href="#">
           <svg class="about-program__play-icon" width="96" height="96" focusable="false"><use xlink:href="#icon-play"></use></svg>
         </a>
       </div>
@@ -49,6 +54,41 @@
   <footer class="page-footer">
 
   </footer>
+  <section class="order-call">
+    <form class="order-call__form" action="https://echo.htmlacademy.ru" method="get">
+      <h3>Заказать звонок</h3>
+      <p>Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос! </p>
+      <input type="text" placeholder="имя" name="name" id="name" pattern="^[а-яА-ЯёЁa-zA-Z\s]+$" required="">
+      <label class="visually-hidden" for="name"></label>
+      <span>Ошибка: неверный формат</span>
+      <input type="tel" placeholder="телефон" name="phone" id="phone" pattern="[\+0-9\s]{10,16}" required="">
+      <label class="visually-hidden" for="phone"></label>
+      <span>Ошибка: неверный формат</span>
+      <button type="submit">перезвоните мне</button>
+      <div class="order-call__agreement">
+        <input class="visually-hidden" type="checkbox" id="agreement" required="">
+        <label for="agreement">
+          Нажимая на кнопку, вы даёте согласие на обработку персональных данных
+        </label>
+      </div>
+      <button class="order-call__close" type="button">
+        <svg width="18" height="17" focusable="false"><use xlink:href="#icon-close"></use></svg>
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </form>
+  </section>
+  <section class="order-call">
+    <form class="order-call__form order-call__form--delivered" action="#" method="get">
+      <svg class="order-call__icon" width="66" height="64" focusable="false"><use xlink:href="#icon-checkmark"></use></svg>
+      <h3>Заявка принята</h3>
+      <p>Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+      <button type="submit">понятно</button>
+      <button class="order-call__close" type="button">
+        <svg width="18" height="17" focusable="false"><use xlink:href="#icon-close"></use></svg>
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </form>
+  </section>
   <script src="js/main.js"></script>
 </body>
 </html>
