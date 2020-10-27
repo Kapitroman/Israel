@@ -144,3 +144,37 @@
   });
 
 })();
+
+(function() {
+
+  var programsWrap = document.querySelector('.programs__wrap');
+  var programsTabs = Array.from(programsWrap.querySelectorAll('.programs__tabs-list li'));
+  var programsContents = Array.from(programsWrap.querySelectorAll('.programs__item'));
+  var programTabsList = programsWrap.querySelector('.programs__tabs-list');
+
+  var numberActive = 1;
+
+  for (var i = 0; i < programsContents.length; i++) {
+    programsContents[i].classList.add('programs__hide');
+  }
+
+  programsTabs[1].classList.add('programs__tab-active');
+  programsContents[1].classList.add('programs__show');
+
+  function tabsToggleClickHandler(evt) {
+    evt.preventDefault();
+    if (!evt.target.closest('.programs__tabs-list li')
+      ||
+      evt.target.closest('.programs__tabs-list li').classList.contains('programs__tab-active')) {
+      return;
+    }
+    programsTabs[numberActive].classList.remove('programs__tab-active');
+    programsContents[numberActive].classList.remove('programs__show');
+    numberActive = programsTabs.indexOf(evt.target.closest('.programs__tabs-list li'));
+    programsTabs[numberActive].classList.add('programs__tab-active');
+    programsContents[numberActive].classList.add('programs__show');
+  }
+
+  programTabsList.addEventListener('click', tabsToggleClickHandler);
+
+})();

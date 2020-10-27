@@ -1,0 +1,335 @@
+.programs {
+  max-width: 1366px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 104px;
+  padding-bottom: 13px;
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  background-image: url("../img/sketch-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: right 56px;
+  background-color: #ffffff;
+}
+
+@media (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .programs {
+    background-image: url("../img/sketch-desktop@2x.jpg");
+  }
+}
+
+.programs h2 {
+  margin-left: 15.37%;
+  margin-bottom: 65px;
+}
+
+.programs__wrap {
+  max-width: 852px;
+  margin-right: 15.37%;
+  margin-left: 15.37%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.programs__tabs-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0;
+}
+
+.programs__tabs-list li a {
+  position: relative;
+  display: block;
+  width: 228px;
+  min-height: 72px;
+  padding-left: 72px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: #484848;
+  opacity: 0.87;
+  background-repeat: no-repeat;
+  background-position: 20px 18px;
+}
+
+.programs__tabs-list li.programs__tab-active {
+  position: relative;
+  background-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.programs__tabs-list li.programs__tab-active::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 35px solid #ffffff;
+  border-left: 35px solid transparent;
+}
+
+.programs__tabs-list li.programs__tab-active::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 35px solid #ffffff;
+  border-left: 35px solid transparent;
+}
+
+.programs__tabs-list li.programs__tab-active a {
+  display: block;
+  min-height: 68px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0;
+  font-variant: small-caps;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.programs__tabs-list a::before {
+  position: absolute;
+  content: "";
+  top: 36px;
+  left: 36px;
+  transform: translate(-50%, -50%);
+}
+
+.programs__tabs-list [href="#content-1"]::before {
+  width: 28px;
+  height: 33px;
+  background-image: url("../img/culture.svg");
+}
+
+.programs__tabs-list [href="#content-2"]::before {
+  width: 36px;
+  height: 35px;
+  background-image: url("../img/study.svg");
+}
+
+.programs__tabs-list [href="#content-3"]::before {
+  width: 32px;
+  height: 25px;
+  background-image: url("../img/business.svg");
+}
+
+.programs__tabs-list [href="#content-4"]::before {
+  width: 32px;
+  height: 29px;
+  background-image: url("../img/volonteur.svg");
+}
+
+.programs__tabs-list [href="#content-5"]::before {
+  width: 23px;
+  height: 25px;
+  background-image: url("../img/religion.svg");
+}
+
+.programs__tabs-list li.programs__tab-active [href="#content-1"]::before {
+  background-image: url("../img/culture-active.svg");
+}
+
+.programs__tabs-list li.programs__tab-active [href="#content-2"]::before {
+  background-image: url("../img/study-active.svg");
+}
+
+.programs__tabs-list li.programs__tab-active [href="#content-3"]::before {
+  background-image: url("../img/business-active.svg");
+}
+
+.programs__tabs-list li.programs__tab-active [href="#content-4"]::before {
+  background-image: url("../img/volonteur-active.svg");
+}
+
+.programs__tabs-list li.programs__tab-active [href="#content-5"]::before {
+  background-image: url("../img/religion-active.svg");
+}
+
+.programs__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.programs__item {
+  padding-left: 64px;
+  padding-top: 18px;
+}
+
+.programs__item h3 {
+  margin-bottom: 24px;
+}
+
+.programs__item p {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #484848;
+  opacity: 0.75;
+}
+
+.programs__item p + p {
+  margin-top: 15px;
+}
+
+.programs__hide {
+  display: none;
+}
+
+.programs__show {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .programs {
+    padding-top: 80px;
+    padding-bottom: 32px;
+    background-position: right -24px top 198px;
+    background-size: 100% auto;
+  }
+
+  .programs h2 {
+    margin-left: 0;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .programs__wrap {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+  }
+
+  .programs__tabs-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 5px;
+    margin-right: 0;
+    margin-bottom: 32px;
+    padding: 0;
+  }
+
+  .programs__tabs-list li a {
+    width: auto;
+    min-height: 48px;
+    padding-left: 52px;
+    padding-right: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-position: 12px 8px;
+  }
+
+  .programs__tabs-list li.programs__tab-active {
+    position: relative;
+    background-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 61px;
+  }
+
+  .programs__tabs-list li.programs__tab-active::before {
+    display: none;
+  }
+
+  .programs__tabs-list li.programs__tab-active::after {
+    display: none;
+  }
+
+  .programs__tabs-list li.programs__tab-active a {
+    min-height: 48px;
+  }
+
+  .programs__tabs-list a::before {
+    top: 26px;
+    left: 26px;
+    transform: translate(-50%, -50%);
+    background-size: 100% auto;
+  }
+
+  .programs__tabs-list [href="#content-1"]::before {
+    width: 25px;
+    height: 29px;
+    background-image: url("../img/culture.svg");
+  }
+
+  .programs__tabs-list [href="#content-2"]::before {
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/study.svg");
+  }
+
+  .programs__tabs-list [href="#content-3"]::before {
+    width: 28px;
+    height: 22px;
+    background-image: url("../img/business.svg");
+  }
+
+  .programs__tabs-list [href="#content-4"]::before {
+    width: 28px;
+    height: 26px;
+    background-image: url("../img/volonteur.svg");
+  }
+
+  .programs__tabs-list [href="#content-5"]::before {
+    width: 20px;
+    height: 22px;
+    background-image: url("../img/religion.svg");
+  }
+
+  .programs__item {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0;
+  }
+
+  .programs__item h3 {
+    margin-bottom: 16px;
+  }
+
+  .programs__item p {
+    font-size: 14px;
+    line-height: 22px;
+    opacity: 0.87;
+  }
+
+  .programs__item p + p {
+    margin-top: 15px;
+  }
+
+  @media (max-width: 320px) {
+    .programs__tabs-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-left: -38px;
+      margin-right: -68px;
+      margin-bottom: 32px;
+      padding: 0;
+    }
+  }
+}
