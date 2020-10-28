@@ -1,0 +1,216 @@
+.desire-trip {
+  max-width: 1366px;
+  width: 100%;
+  min-height: 594px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 209px;
+  padding-left: 15.37%;
+  padding-right: 15.37%;
+  background-image: url("../img/backpack-desktop@1x.png"), url("../img/girl-flag-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: left 0 top 135px, top 0 right 0;
+}
+
+@media (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .desire-trip {
+    background-image: url("../img/backpack-desktop@2x.png"), url("../img/girl-flag-desktop@2x.jpg");
+  }
+}
+
+.desire-trip h2 {
+  margin-bottom: 24px;
+}
+
+.desire-trip p {
+  margin: 0;
+  margin-bottom: 64px;
+  max-width: 400px;
+  width: 100%;
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0;
+  color: #484848;
+  opacity: 0.87;
+}
+
+.desire-trip__form {
+  position: relative;
+  width: 477px;
+}
+
+.desire-trip__form input {
+  width: 100%;
+  min-height: 59px;
+  border-radius: 80px;
+  padding-left: 40px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 256px;
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+  color: #484848;
+  opacity: 0.9;
+}
+
+.desire-trip__form input::placeholder {
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  /*
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  font-variant: small-caps;
+  color: #484848;*/
+  opacity: 0.5;
+}
+
+.desire-trip__form input:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+.desire-trip__form input:focus {
+  border: 2px solid #ffd701;
+  outline: 0;
+}
+
+.input-default {
+  border: 2px solid #e3e3e3;
+}
+
+.input-valid {
+  border: 2px solid #484848;
+}
+
+.input-invalid {
+  border: 2px solid #ff0000;
+}
+
+.desire-trip__form span {
+  display: none;
+}
+
+.desire-trip__form span.error-show {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 25px;
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #ff0000;
+  opacity: 0.75;
+}
+
+.desire-trip__form button[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 264px;
+  min-height: 61px;
+  border-radius: 80px;
+  padding-top: 20px;
+  padding-bottom: 21px;
+  border: none;
+  background-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.desire-trip__form button:hover {
+  cursor: pointer;
+}
+
+.desire-trip__form button[type="submit"]:focus {
+  outline: 0;
+  box-shadow: 0 0 0 1px #1fc0fc;
+}
+
+.desire-trip__form button[type="submit"]:active {
+  background-image: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%),
+    linear-gradient(109.15deg, #ffc341 -50.3%, #ffd701 63.1%);
+}
+
+@media (max-width: 767px) {
+  .desire-trip {
+    min-height: 647px;
+    padding-top: 48px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-image: url("../img/backpack-mobile@1x.jpg"), url("../img/girl-flag-mobile@1x.jpg");
+    background-position: left 0 top 0, bottom 0 right 50%;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .desire-trip {
+      background-image: url("../img/backpack-mobile@2x.jpg"), url("../img/girl-flag-mobile@2x.jpg");
+    }
+  }
+
+  .desire-trip h2 {
+    text-align: center;
+  }
+
+  .desire-trip p {
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  .desire-trip__form {
+    position: static;
+    width: 100%;
+  }
+
+  .desire-trip__form input {
+    max-width: 360px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 5px;
+  }
+
+  .desire-trip__form button[type="submit"] {
+    position: static;
+    display: block;
+    margin-top: 8px;
+    min-height: 61px;
+    border-radius: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .desire-trip p {
+    text-align: left;
+  }
+}

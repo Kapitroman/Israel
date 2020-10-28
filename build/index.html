@@ -31,11 +31,11 @@
     <div class="page-header__wrap">
       <nav class="page-header__main-nav">
         <a class="page-header__tel" href="tel:+97226216581">+ (972) 2 – 621 – 6581</a>
-        <img class="page-header__logo" src="img/logo.svg" width="137" height="48">
+        <img class="page-header__logo" src="img/logo.svg" width="137" height="48" alt="логотип">
         <a class="page-header__order-call" href="#">заказать звонок</a>
       </nav>
       <p class="page-header__slogan">Учёба, путешествие и карьера для еврейской молодёжи</p>
-      <img class="page-header__scrolling" src="img/scrolling.png" width="76" height="132">
+      <img class="page-header__scrolling" src="img/scrolling.png" width="76" height="132" alt="подсказка скроллинг вниз">
     </div>
   </header>
   <main>
@@ -86,8 +86,17 @@
             <p>Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательногои делового администрирования или искусства? Здесь, в Израиле, Вы сможете изучить все это в удивительной университетской среде.</p>
           </li>
         </ul>
-
       </div>
+    </section>
+    <section class="desire-trip">
+      <h2>Хочу поехать!</h2>
+      <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
+      <form class="desire-trip__form" action="https://echo.htmlacademy.ru" method="get">
+        <input type="tel" placeholder="телефон" name="phone2" id="phone2" pattern="[\+0-9\s]{10,16}" required="">
+        <label class="visually-hidden" for="phone2">Телефон</label>
+        <span>Ошибка: неверный формат</span>
+        <button type="submit">перезвоните мне</button>
+      </form>
     </section>
 
   </main>
