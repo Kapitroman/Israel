@@ -278,3 +278,77 @@
   });
 
 })();
+
+(function () {
+
+  var sliderGallery = document.querySelector('.life');
+  var imageSlider = sliderGallery.querySelector('.life__pictures');
+  var sliderController = sliderGallery.querySelector('.life__controller');
+  var sliderPoints = Array.from(sliderGallery.querySelectorAll('.life__point'));
+  var mobile;
+
+  if (window.innerWidth < 768) {
+    mobile = true;
+    slider();
+  } else {
+    mobile = false;
+  }
+
+  window.addEventListener('resize', function (evt) {
+    if(evt.target.innerWidth < 768 && !mobile) {
+      mobile = true;
+      slider();
+      return;
+    }
+    if (evt.target.innerWidth < 768 && mobile) {
+      return;
+    }
+    if (evt.target.innerWidth >= 768 && !mobile) {
+      return;
+    }
+    if (evt.target.innerWidth >= 768 && mobile) {
+      mobile = false;
+      for (var i = 0; i < sliderPoints.length; i++ ) {
+        if (sliderPoints[i].classList.contains('life__point-active')) {
+          sliderPoints[i].classList.remove('life__point-active');
+        }
+      }
+      imageSlider.style.marginLeft = '0px';
+      sliderController.removeEventListener('click', clickOnPointHandler);
+    }
+  }, false);
+
+
+
+  function slider() {
+
+    var numberPoint = 0;
+    sliderPoints[0].classList.add('life__point-active');
+    //var activePoint = sliderPoints[0];
+
+    function clickOnPointHandler(evt) {
+      var point = evt.target;
+      if (!point.classList.contains('life__point') || point.classList.contains('life__point-active')) {
+        return;
+      }
+      else {
+        for (var i = 0; i < sliderPoints.length; i++ ) {
+          if (sliderPoints[i].classList.contains('life__point-active')) {
+            sliderPoints[i].classList.remove('life__point-active');
+          }
+        }
+        //activePoint.classList.remove('life__point-active');
+
+        //activePoint.offsetWidth = activePoint.offsetWidth;
+
+        numberPoint = sliderPoints.indexOf(point);
+        point.classList.add('life__point-active');
+        //activePoint = point;
+        imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
+      }
+    }
+
+    sliderController.addEventListener('click', clickOnPointHandler);
+  }
+
+})();
