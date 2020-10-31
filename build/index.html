@@ -122,28 +122,47 @@
       <div class="life__gallery">
         <ul class="life__pictures clearfix">
           <li class="life__img life__img-big">
-            <img src="../img/life-1@1x.png" width="482" height="732" alt="фото исторической архитектуры">
+            <picture>
+              <source type="image/webp" srcset="../img/life-1@1x.webp 1x, ../img/life-1@2x.webp 2x">
+              <!-- 1х: 482px; 2x: 964px -->
+              <img src="../img/life-1@1x.png" width="482" height="732" srcset="../img/life-1@2x.png 2x" alt="фото исторической архитектуры" loading="lazy">
+            </picture>
             <span>Экскурсии по Израилю и знакомство с его историей</span>
           </li>
           <li class="life__img life__img-small">
-            <img src="../img/life-2@1x.png" width="211" height="318" alt="фото студент за учебой">
+            <picture>
+              <source type="image/webp" srcset="../img/life-2@1x.webp 1x, ../img/life-2@2x.webp 2x">
+              <!-- 1х: 211px; 2x: 422px -->
+              <img src="../img/life-2@1x.png" width="211" height="318" srcset="../img/life-2@2x.png 2x" alt="фото студент за учебой" loading="lazy">
+            </picture>
             <span>Изучение иврита</span>
           </li>
           <li class="life__img life__img-middle life__img-middle-1">
-            <img src="../img/life-3@1x.png" width="411" height="318" alt="фото совместное обсуждение студентов">
+            <picture>
+              <source type="image/webp" srcset="../img/life-3@1x.webp 1x, ../img/life-3@2x.webp 2x">
+              <!-- 1х: 411px; 2x: 822px -->
+              <img src="../img/life-3@1x.png" width="411" height="318" srcset="../img/life-3@2x.png 2x" alt="фото совместное обсуждение студентов" loading="lazy">
+            </picture>
             <span>Обучение современным &nbsp; &nbsp; навыкам  и профессиям</span>
           </li>
           <li class="life__img life__img-middle life__img-middle-2">
-            <img src="../img/life-4@1x.png" width="411" height="318" alt="фото фото израильская молодежь">
+            <picture>
+              <source type="image/webp" srcset="../img/life-4@1x.webp 1x, ../img/life-4@2x.webp 2x">
+              <!-- 1х: 411px; 2x: 822px -->
+              <img src="../img/life-4@1x.png" width="411" height="318" srcset="../img/life-4@2x.png 2x" alt="фото израильская молодежь" loading="lazy">
+            </picture>
             <span>Совместные творческие проекты с израильской молодёжью</span>
           </li>
           <li class="life__img life__img-small">
-            <img src="../img/life-5@1x.png" width="214" height="318" alt="фото человек на фоне восхода">
+            <picture>
+              <source type="image/webp" srcset="../img/life-5@1x.webp 1x, ../img/life-5@2x.webp 2x">
+              <!-- 1х: 214px; 2x: 428px -->
+              <img src="../img/life-5@1x.png" width="214" height="318" srcset="../img/life-5@2x.png 2x" alt="фото человек на фоне восхода" loading="lazy">
+            </picture>
             <span>Развитие лидерства</span>
           </li>
         </ul>
       </div>
-
       <ul class="life__controller">
         <li class="life__point"></li>
         <li class="life__point"></li>
@@ -151,8 +170,6 @@
         <li class="life__point"></li>
         <li class="life__point"></li>
       </ul>
-
-
     </section>
 
   </main>
