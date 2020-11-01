@@ -338,9 +338,6 @@
           }
         }
         //activePoint.classList.remove('life__point-active');
-
-        //activePoint.offsetWidth = activePoint.offsetWidth;
-
         numberPoint = sliderPoints.indexOf(point);
         point.classList.add('life__point-active');
         //activePoint = point;
@@ -350,5 +347,24 @@
 
     sliderController.addEventListener('click', clickOnPointHandler);
   }
+
+})();
+
+(function () {
+
+  var questionsList =  document.querySelector('.questions__list');
+
+  questionsList.addEventListener('click', function (evt) {
+    if (evt.target.closest('.questions__wrap li')) {
+      var question = evt.target.closest('.questions__wrap li');
+      if (question.querySelector('p').classList.contains('questions__show')) {
+        question.querySelector('p').classList.remove('questions__show');
+        question.querySelector('svg').classList.remove('questions__rotated');
+      } else {
+        question.querySelector('p').classList.add('questions__show');
+        question.querySelector('svg').classList.add('questions__rotated');
+      }
+    }
+  })
 
 })();

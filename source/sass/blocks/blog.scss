@@ -1,0 +1,153 @@
+.blog {
+  max-width: 1366px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 57px;
+  min-height: 583px;
+  padding-top: 120px;
+  background-image: url("../img/masaisrael-desktop@1x.jpg");
+  background-color: #94544b;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+@media (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .blog {
+    background-image: url("../img/masaisrael-desktop@2x.jpg");
+  }
+}
+
+.blog__wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  margin-left: 58.13%;
+  margin-right: 12.23%;
+}
+
+.blog__wrap h2 {
+  margin-bottom: 24px;
+}
+
+.blog__wrap p {
+  margin: 0;
+  margin-bottom: 48px;
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0;
+  color: #ffffff;
+  opacity: 0.87;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.blog__wrap a {
+  position: relative;
+  display: block;
+  width: 230px;
+  min-height: 61px;
+  border-radius: 80px;
+  padding-top: 20px;
+  padding-left: 72px;
+  padding-bottom: 21px;
+  border: none;
+  background-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+  font-family: "Fira Sans", "Verdana", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  text-align: left;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.blog__icon {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+}
+
+.blog__wrap a:hover {
+  cursor: pointer;
+}
+
+.blog__wrap a:focus {
+  outline: 0;
+  box-shadow: 0 0 0 1px #1fc0fc;
+}
+
+.blog__wrap a:active {
+  background-image: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%),
+    linear-gradient(109.15deg, #ffc341 -50.3%, #ffd701 63.1%);
+}
+
+@media (max-width: 767px) {
+  .blog {
+    min-height: 391px;
+    margin-bottom: 80px;
+    padding-top: 0;
+    background-color: #ffffff;
+    background-image: none;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .blog {
+      background-color: #ffffff;
+      background-image: none;
+    }
+  }
+
+  .blog__wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .blog__wrap h2 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    line-height: 49px;
+    margin-bottom: 0;
+  }
+
+  .blog__wrap p {
+    margin-top: -4px;
+    margin-bottom: 16px;
+    padding-top: 101px;
+    padding-bottom: 41px;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    font-size: 16px;
+    line-height: 26px;
+    background-image: url("../img/masaisrael-mobile@1x.jpg");
+    background-color: burlywood;
+    background-position: top 0 left -69px;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .blog__wrap p {
+      background-image: url("../img/masaisrael-mobile@2x.jpg");
+    }
+  }
+
+  .blog__wrap a {
+    width: 264px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 89px;
+  }
+
+  .blog__icon {
+    left: 57px;
+  }
+}
