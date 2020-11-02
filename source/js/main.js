@@ -368,3 +368,40 @@
   })
 
 })();
+
+(function () {
+
+  var numberSlide = 3;
+  var sectionFeedbacks = document.querySelector('.feedbacks');
+  var leftArrow = sectionFeedbacks.querySelector('.feedbacks__left');
+  var rightArrow = sectionFeedbacks.querySelector('.feedbacks__right');
+  var slides = sectionFeedbacks.querySelectorAll('.feedbacks__slide');
+  var sliderCount = sectionFeedbacks.querySelector('.feedbacks__arrows span');
+  slides[2].classList.add('feedbacks__show');
+  var slideShowed = slides[2];
+
+  leftArrow.addEventListener('click', function () {
+    if (numberSlide === 1) {
+      return;
+    } else {
+      slideShowed.classList.remove('feedbacks__show');
+      numberSlide --;
+      slides[numberSlide - 1].classList.add('feedbacks__show');
+      slideShowed = slides[numberSlide - 1];
+      sliderCount.textContent = numberSlide + ' / 6';
+    }
+  });
+
+  rightArrow.addEventListener('click', function () {
+    if (numberSlide === 6) {
+      return;
+    } else {
+      slideShowed.classList.remove('feedbacks__show');
+      numberSlide ++;
+      slides[numberSlide - 1].classList.add('feedbacks__show');
+      slideShowed = slides[numberSlide - 1];
+      sliderCount.textContent = numberSlide + ' / 6';
+    }
+  });
+
+})();
