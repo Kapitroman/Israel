@@ -22,7 +22,7 @@
 .blog__wrap {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 395px;
   width: 100%;
   margin-left: 58.13%;
   margin-right: 12.23%;
@@ -87,6 +87,13 @@
 .blog__wrap a:active {
   background-image: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%),
     linear-gradient(109.15deg, #ffc341 -50.3%, #ffd701 63.1%);
+}
+
+@media (max-width: 1023px) {
+  .blog__wrap {
+    margin-left: 45%;
+    margin-right: 10%;
+  }
 }
 
 @media (max-width: 767px) {
