@@ -75,7 +75,7 @@
 .desire-trip__form input:invalid {
   box-shadow: none;
 }
-
+/*
 :-moz-submit-invalid {
   box-shadow: none;
 }
@@ -83,12 +83,12 @@
 :-moz-ui-invalid {
   box-shadow: none;
 }
-
+*/
 .desire-trip__form input:focus {
   border: 2px solid #ffd701;
   outline: 0;
 }
-
+/*
 .input-default {
   border: 2px solid #e3e3e3;
 }
@@ -100,7 +100,7 @@
 .input-invalid {
   border: 2px solid #ff0000;
 }
-
+*/
 .desire-trip__form span {
   display: none;
 }

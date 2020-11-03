@@ -320,10 +320,68 @@
         </div>
       </div>
     </section>
-
+    <section class="details">
+      <div class="details__contacts">
+        <h2>Узнать подробности</h2>
+        <div class="details__info">
+          <div class="details__city">
+            <p>
+              Ваш город:
+              <span>новосибирск</span>
+            </p>
+          </div>
+          <div class="details__manager">
+            <img src="../img/details-manager@1x.png" width="112" height="112" alt="фото Анна Горелик">
+            <div class="details__contacts-manager">
+              <p><span>Ваш куратор: </span>Анна Горелик</p>
+              <p>Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»</p>
+              <div class="details__social">
+                <a href="#"><svg class="details__icon" width="24" height="24" focusable="false"><use xlink:href="#icon-fb"></use></svg></a>
+                <a href="#"><svg class="details__icon" width="24" height="24" focusable="false"><use xlink:href="#icon-whatsapp"></use></svg></a>
+                <a href="#"><svg class="details__icon" width="24" height="24" focusable="false"><use xlink:href="#icon-telegram"></use></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="details__description">
+          <p>Куратор является опытным специалистом агентства Сохнут и знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте подробнее о программах и выберите свою !</p>
+        </div>
+      </div>
+      <div class="details__map">
+        <img src="../img/details-map@1x.png" width="702" height="448" alt="карта с адресом Новосибирск, ул. Щетинкина 68">
+        <img src="../img/marker-map.svg" width="18" height="28" alt="маркер карты">
+      </div>
+      <form class="details__form" action="https://echo.htmlacademy.ru" method="get">
+        <div class="details__form-text">
+            <p>Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+            <p>Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!</p>
+        </div>
+        <div class="details__fields">
+          <div class="details__input">
+            <input type="text" placeholder="имя" name="name3" id="name3" pattern="^[а-яА-ЯёЁa-zA-Z\s]+$" required>
+            <label class="visually-hidden" for="name3"></label>
+            <span>Ошибка: неверный формат</span>
+          </div>
+          <div class="details__input">
+            <input type="tel" placeholder="телефон" name="phone3" id="phone3" pattern="[\+0-9\s]{10,16}" required>
+            <label class="visually-hidden" for="phone3"></label>
+            <span>Ошибка: неверный формат</span>
+          </div>
+          <div class="details__button">
+            <button type="submit">перезвоните мне</button>
+          </div>
+        </div>
+      </form>
+    </section>
   </main>
   <footer class="page-footer">
-
+    <img src="../img/masa-logo.svg" width="85" height="27" alt="логотип">
+    <p>Copyright someDesignCompany ©2019</p>
+    <div class="page-footer__social">
+      <a href="#" class="page-footer__link-facebook"><svg class="page-footer__icon" width="24" height="24" focusable="false"><use xlink:href="#icon-facebook"></use></svg></a>
+      <a href="#" class="page-footer__link-twitter"><svg class="page-footer__icon" width="24" height="24" focusable="false"><use xlink:href="#icon-twitter"></use></svg></a>
+      <a href="#" class="page-footer__link-instagram"><svg class="page-footer__icon" width="24" height="24" focusable="false"><use xlink:href="#icon-instagram"></use></svg></a>
+    </div>
   </footer>
   <section class="order-call">
     <form class="order-call__form" action="https://echo.htmlacademy.ru" method="get">
