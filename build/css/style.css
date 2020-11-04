@@ -1340,14 +1340,14 @@ input[type="checkbox"]:checked + label::after {
   padding-bottom: 160px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("../img/life-bg-desktop@1x.jpg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  background-image: url("../img/watch@1x.png"), url("../img/life-bg-desktop@1x.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 0 top 656px, left 0 top 0;
   z-index: 1; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .life {
-    background-image: url("../img/life-bg-desktop@2x.jpg"); } }
+    background-image: url("../img/watch@2x.png"), url("../img/life-bg-desktop@2x.jpg"); } }
 
 .life h2 {
   text-align: center;
