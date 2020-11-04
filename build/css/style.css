@@ -2116,8 +2116,7 @@ input[type="checkbox"]:checked + label::after {
 
 .details__contacts {
   max-width: 515px;
-  width: 100%;
-  background-color: chartreuse; }
+  width: 100%; }
 
 .details__contacts h2 {
   margin-bottom: 48px; }
