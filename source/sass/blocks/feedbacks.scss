@@ -50,6 +50,7 @@
 }
 
 .feedbacks__person span {
+  display: block;
   margin-bottom: 8px;
   font-size: 24px;
   font-weight: 500;
@@ -71,6 +72,8 @@
 }
 
 .feedbacks__person p span {
+  display: inline;
+  padding-right: 5px;
   font-size: 15px;
   font-weight: 400;
   line-height: 21px;
@@ -154,7 +157,7 @@
 }
 
 .feedbacks__social {
-  width: 104px;
+  width: 100px;
 }
 
 .feedbacks__icon {
@@ -162,11 +165,11 @@
 }
 
 .feedbacks__link-facebook {
-  margin-right: 14px;
+  margin-right: 12px;
 }
 
 .feedbacks__link-twitter {
-  margin-right: 18px;
+  margin-right: 16px;
 }
 
 .feedbacks__arrows svg {

@@ -44,7 +44,7 @@
 
 .desire-trip__form input {
   width: 100%;
-  min-height: 59px;
+  min-height: 58px;
   border-radius: 80px;
   padding-left: 40px;
   padding-top: 18px;
@@ -54,7 +54,7 @@
   font-size: 17px;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   font-variant: small-caps;
   color: #484848;
   opacity: 0.9;
@@ -62,45 +62,18 @@
 
 .desire-trip__form input::placeholder {
   font-family: "Fira Sans", "Verdana", sans-serif;
-  /*
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0em;
-  font-variant: small-caps;
-  color: #484848;*/
   opacity: 0.5;
 }
 
 .desire-trip__form input:invalid {
   box-shadow: none;
 }
-/*
-:-moz-submit-invalid {
-  box-shadow: none;
-}
 
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-*/
 .desire-trip__form input:focus {
   border: 2px solid #ffd701;
   outline: 0;
 }
-/*
-.input-default {
-  border: 2px solid #e3e3e3;
-}
 
-.input-valid {
-  border: 2px solid #484848;
-}
-
-.input-invalid {
-  border: 2px solid #ff0000;
-}
-*/
 .desire-trip__form span {
   display: none;
 }
@@ -123,7 +96,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 264px;
+  width: 216px;
   min-height: 61px;
   border-radius: 80px;
   padding-top: 20px;
@@ -135,7 +108,7 @@
   font-weight: 500;
   line-height: 20px;
   font-variant: small-caps;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-align: center;
   color: #ffffff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
@@ -174,10 +147,11 @@
 
   .desire-trip h2 {
     text-align: center;
+    margin-bottom: 22px;
   }
 
   .desire-trip p {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
@@ -192,6 +166,7 @@
 
   .desire-trip__form input {
     max-width: 360px;
+    min-height: 56px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -201,8 +176,9 @@
   .desire-trip__form button[type="submit"] {
     position: static;
     display: block;
+    width: 264px;
     margin-top: 8px;
-    min-height: 61px;
+    min-height: 59px;
     border-radius: 80px;
     margin-left: auto;
     margin-right: auto;

@@ -28,6 +28,7 @@
 .details__contacts {
   max-width: 515px;
   width: 100%;
+  background-color: chartreuse;
 }
 
 .details__contacts h2 {
@@ -68,9 +69,9 @@
   margin-left: 16px;
   margin-right: 25px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 23px;
-  letter-spacing: 0.005em;
+  letter-spacing: 0.01em;
   font-variant: small-caps;
   color: #484848;
   opacity: 0.74;
@@ -82,7 +83,7 @@
   position: absolute;
   width: 15px;
   height: 16px;
-  right: 2px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   background-image: url("../img/gps.svg");
@@ -96,7 +97,7 @@
 
 .details__manager img {
   display: block;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 
 .details__contacts-manager p {
@@ -112,7 +113,7 @@
 }
 
 .details__contacts-manager p span {
-  margin-right: 0;
+  margin-right: 5px;
   font-weight: 400;
   color: #1fc0fc;
   border: none;
@@ -177,6 +178,7 @@
 
 .details__form-text p {
   margin: 0;
+  margin-top: 3px;
   font-size: 17px;
   font-weight: 500;
   line-height: 26px;
@@ -187,7 +189,7 @@
 
 .details__form-text p + p {
   margin-top: 12px;
-  margin-bottom: 96px;
+  margin-bottom: 0;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
@@ -302,8 +304,8 @@
     justify-content: flex-start;
     min-height: auto;
     margin-top: 0;
-    padding-top: 78px;
-    padding-bottom: 64px;
+    padding-top: 75px;
+    padding-bottom: 60px;
     padding-left: 0;
     padding-right: 0;
     background-image: none;
@@ -319,7 +321,7 @@
   .details__contacts {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -331,6 +333,14 @@
 
   .details__info {
     margin-bottom: 34px;
+  }
+
+  .details__contacts-manager p {
+    margin-bottom: 10px;
+  }
+
+  .details__contacts-manager p + p {
+    max-width: 100%;
   }
 
   .details__manager {
@@ -345,6 +355,7 @@
   .details__description p {
     font-size: 16px;
     line-height: 26px;
+    padding-right: 10px;
   }
 
   .details__map {
@@ -358,15 +369,15 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    margin-right: -125px;
-    margin-bottom: -20px;
+    margin-right: -135px;
+    margin-bottom: -15px;
   }
 
   .details__map img + img {
     width: 26px;
     height: 40px;
     top: 210px;
-    right: 158px;
+    right: 163px;
   }
 
   .details__form {
@@ -403,7 +414,11 @@
   }
 
   .details__button {
-    margin-top: 16px;
+    margin-top: 14px;
+  }
+
+  .details__form button[type="submit"] {
+    width: 264px;
   }
 
   .details__input,

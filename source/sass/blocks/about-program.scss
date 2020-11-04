@@ -17,6 +17,11 @@
   color: #484848;
 }
 
+.about-program p span {
+  display: block;
+}
+
+
 .about-program > div {
   display: flex;
   height: 604px;
@@ -55,6 +60,10 @@
     font-size: 16px;
     line-height: 26px;
     text-align: left;
+  }
+
+  .about-program p span {
+    display: inline;
   }
 
   .about-program > div {

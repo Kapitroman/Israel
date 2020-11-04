@@ -22,6 +22,7 @@
 }
 
 .questions__wrap {
+  min-height: 803px;
   background-image: url("../img/questions-img@1x.png");
   background-repeat: no-repeat;
   background-position: top 0 left 611px;
@@ -35,7 +36,7 @@
 }
 
 .questions__text h2 {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .questions__list {
@@ -46,7 +47,7 @@
 }
 
 .questions__list li {
-  margin-bottom: 24px;
+  margin-bottom: 23px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 }
 
@@ -90,12 +91,13 @@
 .questions__list p {
   display: none;
   margin: 0;
+  margin-top: -5px;
   max-width: 480px;
   width: 100%;
-  padding-bottom: 32px;
+  padding-bottom: 30px;
   font-size: 15px;
   font-weight: 400;
-  line-height: 21px;
+  line-height: 20px;
   letter-spacing: 0;
   color: #484848;
   opacity: 0.87;
@@ -113,7 +115,7 @@
   .questions {
     min-height: auto;
     padding-top: 0;
-    padding-bottom: 56px;
+    padding-bottom: 59px;
     padding-left: 10%;
     padding-right: 10%;
     background-image: url("../img/bag-desktop@1x.png");
@@ -129,6 +131,7 @@
   }
 
   .questions__wrap {
+    min-height: auto;
     background-image: none;
   }
 
@@ -167,6 +170,7 @@
   .questions__list p {
     max-width: 767px;
     width: 100%;
+    margin-top: 0;
     padding-bottom: 16px;
     padding-right: 60px;
     font-size: 14px;

@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 104px;
-  padding-bottom: 13px;
+  padding-bottom: 18px;
   font-family: "Fira Sans", "Verdana", sans-serif;
   background-image: url("../img/sketch-desktop@1x.jpg");
   background-repeat: no-repeat;
@@ -49,10 +49,10 @@
   position: relative;
   display: block;
   width: 228px;
-  min-height: 72px;
+  min-height: 70px;
   padding-left: 72px;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  padding-top: 26px;
+  padding-bottom: 26px;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
@@ -193,6 +193,8 @@
 
 .programs__item p + p {
   margin-top: 15px;
+  max-width: 535px;
+  width: 100%;
 }
 
 .programs__hide {
@@ -250,6 +252,7 @@
     margin-top: 0;
     margin-bottom: 0;
     border-radius: 61px;
+    letter-spacing: 0.01em;
   }
 
   .programs__tabs-list li.programs__tab-active::before {
@@ -262,12 +265,13 @@
 
   .programs__tabs-list li.programs__tab-active a {
     min-height: 48px;
+    padding-right: 20px;
   }
 
   .programs__tabs-list a::before {
     top: 26px;
     left: 26px;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -55%);
     background-size: 100% auto;
   }
 

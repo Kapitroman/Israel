@@ -5,7 +5,7 @@
   min-height: 1046px;
   margin-top: -184px;
   padding-top: 43px;
-  padding-bottom: 160px;
+  padding-bottom: 130px;
   margin-left: auto;
   margin-right: auto;
   background-image: url("../img/watch@1x.png"), url("../img/life-bg-desktop@1x.jpg");
@@ -64,7 +64,7 @@
 }
 
 .life__img-big {
-  margin-top: -62px;
+  margin-top: -64px;
   margin-left: 9px;
 }
 
@@ -198,6 +198,11 @@
     max-width: 256px;
     left: 16px;
   }
+
+  .life__img-big span {
+    padding-left: 8px;
+    padding-right: 10px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -211,6 +216,10 @@
     .life {
       background-image: none;
     }
+  }
+
+  .life h2 {
+    margin-bottom: 22px;
   }
 
   .life h2 span {
