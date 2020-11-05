@@ -64,6 +64,10 @@
   background-position: 20px 18px;
 }
 
+.programs__tabs-list li a:focus {
+  outline: 1px solid #1fe0fc;
+}
+
 .programs__tabs-list li.programs__tab-active {
   position: relative;
   background-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
@@ -230,6 +234,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
+    min-height: 50px;
     margin-left: 5px;
     margin-right: 0;
     margin-bottom: 32px;
