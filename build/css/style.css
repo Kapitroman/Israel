@@ -894,7 +894,7 @@ input[type="checkbox"]:checked + label::after {
         flex-wrap: nowrap;
     margin-left: -38px;
     margin-right: -68px;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     padding: 0; } }
 
 .desire-trip {
@@ -1989,7 +1989,13 @@ input[type="checkbox"]:checked + label::after {
           transform: rotate(180deg); }
 
 .feedbacks__social {
-  width: 100px; }
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.feedbacks__social a {
+  display: block; }
 
 .feedbacks__icon {
   opacity: 0.2; }
@@ -2535,10 +2541,18 @@ input[type="checkbox"]:checked + label::after {
 
 .page-footer__social {
   margin-left: auto;
-  padding-right: 6px; }
+  padding-right: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .page-footer__icon {
   opacity: 0.2; }
+
+.page-footer__social a {
+  display: block; }
 
 .page-footer__social a + a {
   margin-left: 17px; }

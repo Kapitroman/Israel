@@ -158,6 +158,11 @@
 
 .feedbacks__social {
   width: 100px;
+  display: flex;
+}
+
+.feedbacks__social a {
+  display: block;
 }
 
 .feedbacks__icon {

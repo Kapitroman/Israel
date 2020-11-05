@@ -36,10 +36,16 @@
 .page-footer__social {
   margin-left: auto;
   padding-right: 6px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .page-footer__icon {
   opacity: 0.2;
+}
+
+.page-footer__social a {
+  display: block;
 }
 
 .page-footer__social a + a {
