@@ -55,9 +55,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -77,7 +77,6 @@
 .page-header__tel {
   display: block;
   margin-top: 8px;
-  margin-right: auto;
   margin-bottom: 8px;
   text-decoration: none;
   padding-left: 10px;
@@ -85,9 +84,14 @@
   letter-spacing: -0.01em;
   color: #484848; }
 
+.page-header__tel:hover {
+  opacity: 0.7; }
+
+.page-header__tel:focus {
+  outline: 1px solid #1fc0fc; }
+
 .page-header__order-call {
   display: block;
-  margin-left: auto;
   padding-right: 14px;
   padding-left: 34px;
   letter-spacing: 0.08em;
@@ -96,6 +100,12 @@
   font-variant: small-caps;
   color: #484848;
   text-shadow: 0 4px 4px rgba 0, 0, 0, 0.25; }
+
+.page-header__order-call:hover {
+  opacity: 0.7; }
+
+.page-header__order-call:focus {
+  outline: 1px solid #1fc0fc; }
 
 .page-header__slogan {
   width: 343px;
@@ -656,6 +666,9 @@ input[type="checkbox"]:checked + label::after {
   background-repeat: no-repeat;
   background-position: 20px 18px; }
 
+.programs__tabs-list li a:hover {
+  color: #ffc341; }
+
 .programs__tabs-list li a:focus {
   outline: 1px solid #1fe0fc; }
 
@@ -743,6 +756,21 @@ input[type="checkbox"]:checked + label::after {
 
 .programs__tabs-list li.programs__tab-active [href="#content-5"]::before {
   background-image: url("../img/religion-active.svg"); }
+
+.programs__tabs-list [href="#content-1"]:hover::before {
+  background-image: url("../img/culture-hover.svg"); }
+
+.programs__tabs-list [href="#content-2"]:hover::before {
+  background-image: url("../img/study-hover.svg"); }
+
+.programs__tabs-list [href="#content-3"]:hover::before {
+  background-image: url("../img/business-hover.svg"); }
+
+.programs__tabs-list [href="#content-4"]:hover::before {
+  background-image: url("../img/volonteur-hover.svg"); }
+
+.programs__tabs-list [href="#content-5"]:hover::before {
+  background-image: url("../img/religion-hover.svg"); }
 
 .programs__list {
   display: -webkit-box;
@@ -1717,7 +1745,10 @@ input[type="checkbox"]:checked + label::after {
   min-height: 72px;
   cursor: pointer; }
 
-.questions__list h4 {
+.questions__wrap-head:focus {
+  outline: 1px solid #1fe0fc; }
+
+.questions__wrap-head p {
   max-width: 390px;
   width: 100%;
   margin: 0;
@@ -1746,7 +1777,7 @@ input[type="checkbox"]:checked + label::after {
   top: 23px;
   fill: none; }
 
-.questions__list p {
+.questions__wrap-head + p {
   display: none;
   margin: 0;
   margin-top: -5px;
@@ -2523,6 +2554,7 @@ input[type="checkbox"]:checked + label::after {
   border-top: 1px solid rgba(72, 72, 72, 0.2); }
 
 .page-footer__logo {
+  display: block;
   margin-right: auto; }
 
 .page-footer img {

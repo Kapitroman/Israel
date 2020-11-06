@@ -21,7 +21,7 @@
     <div class="page-header__wrap">
       <nav class="page-header__main-nav">
         <a class="page-header__tel" href="tel:+97226216581">+ (972) 2 – 621 – 6581</a>
-        <img class="page-header__logo" src="img/logo.svg" width="137" height="48" alt="логотип">
+        <a><img class="page-header__logo" src="img/logo.svg" width="137" height="48" alt="логотип"></a>
         <a class="page-header__order-call" href="#">заказать звонок</a>
       </nav>
       <p class="page-header__slogan">Учёба, путешествие и карьера для еврейской молодёжи</p>
@@ -36,6 +36,7 @@
       <div >
         <a href="#">
           <svg class="about-program__play-icon" width="96" height="96" focusable="false"><use xlink:href="#icon-play"></use></svg>
+          <span class="visually-hidden">запустить видео</span>
         </a>
       </div>
     </section>
@@ -177,7 +178,7 @@
             <li>
               <div class="questions__wrap-head" tabindex="0">
                 <span>1</span>
-                <h4>Кто организатор? Какие сроки у программы?</h4>
+                <p>Кто организатор? Какие сроки у программы?</p>
                 <svg class="questions__icon" width="15" height="8" focusable="false"><use xlink:href="#icon-arrow"></use></svg>
               </div>
               <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
@@ -185,7 +186,7 @@
             <li>
               <div class="questions__wrap-head" tabindex="0">
                 <span>2</span>
-                <h4>Что такое грант на обучение?</h4>
+                <p>Что такое грант на обучение?</p>
                 <svg class="questions__icon" width="15" height="8" focusable="false"><use xlink:href="#icon-arrow"></use></svg>
               </div>
               <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
@@ -193,7 +194,7 @@
             <li>
               <div class="questions__wrap-head" tabindex="0">
                 <span>3</span>
-                <h4>Как определяется стоимость программы?</h4>
+                <p>Как определяется стоимость программы?</p>
                 <svg class="questions__icon" width="15" height="8" focusable="false"><use xlink:href="#icon-arrow"></use></svg>
               </div>
               <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
@@ -201,7 +202,7 @@
             <li>
               <div class="questions__wrap-head" tabindex="0">
                 <span>4</span>
-                <h4>Что такое грант на обучение?</h4>
+                <p>Что такое грант на обучение?</p>
                 <svg class="questions__icon" width="15" height="8" focusable="false"><use xlink:href="#icon-arrow"></use></svg>
               </div>
               <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
@@ -209,7 +210,7 @@
             <li>
               <div class="questions__wrap-head" tabindex="0">
                 <span>5</span>
-                <h4>Признаётся ли учеба в рамках проекта для дальнейшего обучения?</h4>
+                <p>Признаётся ли учеба в рамках проекта для дальнейшего обучения?</p>
                 <svg class="questions__icon" width="15" height="8" focusable="false"><use xlink:href="#icon-arrow"></use></svg>
               </div>
               <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
@@ -217,7 +218,7 @@
             <li>
               <div class="questions__wrap-head" tabindex="0">
                 <span>6</span>
-                <h4>Как выглдядит полный процесс регистрации на программу «Маса»?</h4>
+                <p>Как выглдядит полный процесс регистрации на программу «Маса»?</p>
                 <svg class="questions__icon" width="15" height="8" focusable="false"><use xlink:href="#icon-arrow"></use></svg>
               </div>
               <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Маса» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
@@ -306,8 +307,14 @@
         <div class="feedbacks__arrows">
           <span>3 / 6</span>
           <div class="feedbacks__wrap-arrow">
-            <button class="feedbacks__left"><svg  width=11 height="18" focusable="false"><use xlink:href="#icon-navigator"></use></svg></button>
-            <button class="feedbacks__right"><svg  width="11" height="18" focusable="false"><use xlink:href="#icon-navigator"></use></svg></button>
+            <button class="feedbacks__left">
+              <svg  width=11 height="18" focusable="false"><use xlink:href="#icon-navigator"></use></svg>
+              <span class="visually-hidden">назад</span>
+            </button>
+            <button class="feedbacks__right">
+              <svg  width="11" height="18" focusable="false"><use xlink:href="#icon-navigator"></use></svg>
+              <span class="visually-hidden">вперед</span>
+            </button>
           </div>
         </div>
         <div class="feedbacks__social">
@@ -390,9 +397,9 @@
     </section>
   </main>
   <footer class="page-footer">
-    <div class="page-footer__logo">
+    <a class="page-footer__logo">
       <img src="img/masa-logo.svg" width="85" height="27" alt="логотип">
-    </div>
+    </a>
     <p>Copyright someDesignCompany ©2019</p>
     <div class="page-footer__social">
       <a href="#" class="page-footer__link-facebook">

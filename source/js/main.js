@@ -357,11 +357,11 @@
   questionsList.addEventListener('click', function (evt) {
     if (evt.target.closest('.questions__wrap li')) {
       var question = evt.target.closest('.questions__wrap li');
-      if (question.querySelector('p').classList.contains('questions__show')) {
-        question.querySelector('p').classList.remove('questions__show');
+      if (question.querySelector('.questions__wrap-head + p').classList.contains('questions__show')) {
+        question.querySelector('.questions__wrap-head + p').classList.remove('questions__show');
         question.querySelector('svg').classList.remove('questions__rotated');
       } else {
-        question.querySelector('p').classList.add('questions__show');
+        question.querySelector('.questions__wrap-head + p').classList.add('questions__show');
         question.querySelector('svg').classList.add('questions__rotated');
       }
     }

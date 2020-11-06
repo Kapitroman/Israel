@@ -18,11 +18,10 @@
   }
 }
 
-
 .page-header__main-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   max-width: 1166px;
   width: 100%;
@@ -42,7 +41,6 @@
 .page-header__tel {
   display: block;
   margin-top: 8px;
-  margin-right: auto;
   margin-bottom: 8px;
   text-decoration: none;
   padding-left: 10px;
@@ -51,9 +49,16 @@
   color: #484848;
 }
 
+.page-header__tel:hover {
+  opacity: 0.7;
+}
+
+.page-header__tel:focus {
+  outline: 1px solid #1fc0fc;
+}
+
 .page-header__order-call {
   display: block;
-  margin-left: auto;
   padding-right: 14px;
   padding-left: 34px;
   letter-spacing: 0.08em;
@@ -61,6 +66,14 @@
   font-variant: small-caps;
   color: #484848;
   text-shadow: 0 4px 4px rgba (0, 0, 0, 0.25);
+}
+
+.page-header__order-call:hover {
+  opacity: 0.7;
+}
+
+.page-header__order-call:focus {
+  outline: 1px solid #1fc0fc;
 }
 
 .page-header__slogan {
@@ -93,7 +106,6 @@
       background-image: url("../img/hero-tablet@2x.jpg");
     }
   }
-
 
   .page-header__main-nav {
     margin-bottom: 318px;

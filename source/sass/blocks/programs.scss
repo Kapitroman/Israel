@@ -64,6 +64,10 @@
   background-position: 20px 18px;
 }
 
+.programs__tabs-list li a:hover {
+  color: #ffc341;
+}
+
 .programs__tabs-list li a:focus {
   outline: 1px solid #1fe0fc;
 }
@@ -165,6 +169,26 @@
 
 .programs__tabs-list li.programs__tab-active [href="#content-5"]::before {
   background-image: url("../img/religion-active.svg");
+}
+
+.programs__tabs-list [href="#content-1"]:hover::before {
+  background-image: url("../img/culture-hover.svg");
+}
+
+.programs__tabs-list [href="#content-2"]:hover::before {
+  background-image: url("../img/study-hover.svg");
+}
+
+.programs__tabs-list [href="#content-3"]:hover::before {
+  background-image: url("../img/business-hover.svg");
+}
+
+.programs__tabs-list [href="#content-4"]:hover::before {
+  background-image: url("../img/volonteur-hover.svg");
+}
+
+.programs__tabs-list [href="#content-5"]:hover::before {
+  background-image: url("../img/religion-hover.svg");
 }
 
 .programs__list {
