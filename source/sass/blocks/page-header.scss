@@ -89,9 +89,33 @@
   text-shadow: 0 1px 4px rgba (0, 0, 0, 0.12);
 }
 
+@keyframes shakeScroll {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(-20px);
+  }
+}
+
 .page-header__scrolling {
   display: block;
   margin: 0 auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.page-header__scrolling:hover {
+  animation-name: shakeScroll;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.page-header__scrolling:focus {
+  outline: 1px solid #1fc0fc;
 }
 
 @media (max-width: 1023px) {

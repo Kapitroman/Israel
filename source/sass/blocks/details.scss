@@ -63,7 +63,7 @@
   background-image: url("../img/marker.svg");
 }
 
-.details__city p span {
+.details__city a {
   font-family: "Fira Sans", "Verdana", sans-serif;
   margin-left: 16px;
   margin-right: 25px;
@@ -72,12 +72,13 @@
   line-height: 23px;
   letter-spacing: 0.01em;
   font-variant: small-caps;
+  text-decoration: none;
   color: #484848;
   opacity: 0.74;
   border-bottom: 1px dashed #1fc0fc;
 }
 
-.details__city p::after {
+.details__city a::after {
   content: "";
   position: absolute;
   width: 15px;
@@ -86,6 +87,14 @@
   top: 50%;
   transform: translateY(-50%);
   background-image: url("../img/gps.svg");
+}
+
+.details__city a:hover {
+  opacity: 1;
+}
+
+.details__city a:focus {
+  outline: 1px solid #1fc0fc;
 }
 
 .details__manager {
@@ -138,6 +147,18 @@
 
 .details__social a {
   margin-right: 12px;
+}
+
+.details__social a svg {
+  opacity: 0.15;
+}
+
+.details__social a:hover svg {
+  opacity: 0.7;
+}
+
+.details__social a:focus {
+  outline: 1px solid #1fc0fc;
 }
 
 .details__description p {
@@ -277,6 +298,7 @@
 
 .details__form button:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .details__form button[type="submit"]:focus {

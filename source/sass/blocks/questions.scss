@@ -54,7 +54,11 @@
 .questions__wrap-head {
   position: relative;
   min-height: 72px;
+}
+
+.questions__wrap-head:hover {
   cursor: pointer;
+  opacity: 0.7;
 }
 
 .questions__wrap-head:focus {
@@ -74,6 +78,10 @@
   letter-spacing: 0;
   color: #484848;
 }
+/*
+.questions__wrap-head:hover p {
+  opacity: 0.8;
+}*/
 
 .questions__list span {
   position: absolute;

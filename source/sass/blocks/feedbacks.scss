@@ -105,6 +105,14 @@
   color: #1fc0fc;
 }
 
+.feedbacks__text a:hover {
+  opacity: 0.7;
+}
+
+.feedbacks__text a:focus {
+  outline: 1px solid #1fc0fc;
+}
+
 .feedbacks__navigator,
 .feedbacks__arrows,
 .feedbacks__social,
@@ -152,6 +160,10 @@
   cursor: pointer;
 }
 
+.feedbacks__wrap-arrow button:focus {
+  outline: 1px solid #1fc0fc;
+}
+
 .feedbacks__left svg {
   transform: rotate(180deg);
 }
@@ -165,8 +177,16 @@
   display: block;
 }
 
+.feedbacks__social a:focus {
+  outline: 1px solid #1fc0fc;
+}
+
 .feedbacks__icon {
   opacity: 0.2;
+}
+
+.feedbacks__social a:hover .feedbacks__icon {
+  opacity: 0.7;
 }
 
 .feedbacks__link-facebook {
@@ -177,9 +197,13 @@
   margin-right: 16px;
 }
 
-.feedbacks__arrows svg {
+.feedbacks__wrap-arrow button svg {
   fill: none;
   opacity: 0.7;
+}
+
+.feedbacks__wrap-arrow button:hover svg {
+  opacity: 1;
 }
 
 @media (max-width: 1023px) {

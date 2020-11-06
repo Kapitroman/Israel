@@ -45,6 +45,26 @@
   margin-top: 227px;
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.about-program a:hover svg {
+  animation-name: fadeOut;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
 .about-program a:focus {
   outline: 1px solid #1fc0fc;
 }

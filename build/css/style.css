@@ -119,9 +119,41 @@
   color: #ffffff;
   text-shadow: 0 1px 4px rgba 0, 0, 0, 0.12; }
 
+@-webkit-keyframes shakeScroll {
+  from {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px); }
+  to {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px); } }
+
+@keyframes shakeScroll {
+  from {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px); }
+  to {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px); } }
+
 .page-header__scrolling {
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; }
+
+.page-header__scrolling:hover {
+  -webkit-animation-name: shakeScroll;
+          animation-name: shakeScroll;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+
+.page-header__scrolling:focus {
+  outline: 1px solid #1fc0fc; }
 
 @media (max-width: 1023px) {
   .page-header {
@@ -241,6 +273,30 @@
   position: relative;
   margin: auto;
   margin-top: 227px; }
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1; }
+  50% {
+    opacity: 0.75; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  50% {
+    opacity: 0.75; }
+  to {
+    opacity: 1; } }
+
+.about-program a:hover svg {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
 
 .about-program a:focus {
   outline: 1px solid #1fc0fc; }
@@ -464,7 +520,8 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 
 .order-call__form button:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.8; }
 
 .order-call__form button[type="submit"]:focus {
   outline: 0;
@@ -707,7 +764,8 @@ input[type="checkbox"]:checked + label::after {
   letter-spacing: 0;
   font-variant: small-caps;
   color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  cursor: default; }
 
 .programs__tabs-list a::before {
   position: absolute;
@@ -1045,7 +1103,8 @@ input[type="checkbox"]:checked + label::after {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 
 .desire-trip__form button:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.8; }
 
 .desire-trip__form button[type="submit"]:focus {
   outline: 0;
@@ -1634,7 +1693,8 @@ input[type="checkbox"]:checked + label::after {
           transform: translateY(-50%); }
 
 .blog__wrap a:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.8; }
 
 .blog__wrap a:focus {
   outline: 0;
@@ -1742,8 +1802,11 @@ input[type="checkbox"]:checked + label::after {
 
 .questions__wrap-head {
   position: relative;
-  min-height: 72px;
-  cursor: pointer; }
+  min-height: 72px; }
+
+.questions__wrap-head:hover {
+  cursor: pointer;
+  opacity: 0.7; }
 
 .questions__wrap-head:focus {
   outline: 1px solid #1fe0fc; }
@@ -1761,6 +1824,10 @@ input[type="checkbox"]:checked + label::after {
   letter-spacing: 0;
   color: #484848; }
 
+/*
+.questions__wrap-head:hover p {
+  opacity: 0.8;
+}*/
 .questions__list span {
   position: absolute;
   left: 0;
@@ -1960,6 +2027,12 @@ input[type="checkbox"]:checked + label::after {
   letter-spacing: 0;
   color: #1fc0fc; }
 
+.feedbacks__text a:hover {
+  opacity: 0.7; }
+
+.feedbacks__text a:focus {
+  outline: 1px solid #1fc0fc; }
+
 .feedbacks__navigator,
 .feedbacks__arrows,
 .feedbacks__social,
@@ -2015,6 +2088,9 @@ input[type="checkbox"]:checked + label::after {
   background-color: #ffffff;
   cursor: pointer; }
 
+.feedbacks__wrap-arrow button:focus {
+  outline: 1px solid #1fc0fc; }
+
 .feedbacks__left svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg); }
@@ -2028,8 +2104,14 @@ input[type="checkbox"]:checked + label::after {
 .feedbacks__social a {
   display: block; }
 
+.feedbacks__social a:focus {
+  outline: 1px solid #1fc0fc; }
+
 .feedbacks__icon {
   opacity: 0.2; }
+
+.feedbacks__social a:hover .feedbacks__icon {
+  opacity: 0.7; }
 
 .feedbacks__link-facebook {
   margin-right: 12px; }
@@ -2037,9 +2119,12 @@ input[type="checkbox"]:checked + label::after {
 .feedbacks__link-twitter {
   margin-right: 16px; }
 
-.feedbacks__arrows svg {
+.feedbacks__wrap-arrow button svg {
   fill: none;
   opacity: 0.7; }
+
+.feedbacks__wrap-arrow button:hover svg {
+  opacity: 1; }
 
 @media (max-width: 1023px) {
   .feedbacks__wrap-slider {
@@ -2193,7 +2278,7 @@ input[type="checkbox"]:checked + label::after {
           transform: translateY(-50%);
   background-image: url("../img/marker.svg"); }
 
-.details__city p span {
+.details__city a {
   font-family: "Fira Sans", "Verdana", sans-serif;
   margin-left: 16px;
   margin-right: 25px;
@@ -2202,11 +2287,12 @@ input[type="checkbox"]:checked + label::after {
   line-height: 23px;
   letter-spacing: 0.01em;
   font-variant: small-caps;
+  text-decoration: none;
   color: #484848;
   opacity: 0.74;
   border-bottom: 1px dashed #1fc0fc; }
 
-.details__city p::after {
+.details__city a::after {
   content: "";
   position: absolute;
   width: 15px;
@@ -2216,6 +2302,12 @@ input[type="checkbox"]:checked + label::after {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-image: url("../img/gps.svg"); }
+
+.details__city a:hover {
+  opacity: 1; }
+
+.details__city a:focus {
+  outline: 1px solid #1fc0fc; }
 
 .details__manager {
   display: -webkit-box;
@@ -2266,6 +2358,15 @@ input[type="checkbox"]:checked + label::after {
 
 .details__social a {
   margin-right: 12px; }
+
+.details__social a svg {
+  opacity: 0.15; }
+
+.details__social a:hover svg {
+  opacity: 0.7; }
+
+.details__social a:focus {
+  outline: 1px solid #1fc0fc; }
 
 .details__description p {
   max-width: 480px;
@@ -2410,7 +2511,8 @@ input[type="checkbox"]:checked + label::after {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 
 .details__form button:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.8; }
 
 .details__form button[type="submit"]:focus {
   outline: 0;
@@ -2585,6 +2687,12 @@ input[type="checkbox"]:checked + label::after {
 
 .page-footer__social a {
   display: block; }
+
+.page-footer__social a:focus {
+  outline: 1px solid #1fc0fc; }
+
+.page-footer__social a:hover .page-footer__icon {
+  opacity: 0.7; }
 
 .page-footer__social a + a {
   margin-left: 17px; }
