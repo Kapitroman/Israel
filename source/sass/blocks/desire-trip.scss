@@ -10,12 +10,14 @@
   background-image: url("../img/backpack-desktop@1x.png"), url("../img/girl-flag-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-position: left 0 top 135px, top 0 right 0;
+  background-size: 147px auto, 818px auto;
 }
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .desire-trip {
     background-image: url("../img/backpack-desktop@2x.png"), url("../img/girl-flag-desktop@2x.jpg");
+    background-size: 147px auto, 818px auto;
   }
 }
 
@@ -137,12 +139,14 @@
     padding-right: 5%;
     background-image: url("../img/backpack-mobile@1x.jpg"), url("../img/girl-flag-mobile@1x.jpg");
     background-position: left 0 top 0, bottom 0 right 50%;
+    background-size: 103px auto, 424px auto;
   }
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
     .desire-trip {
       background-image: url("../img/backpack-mobile@2x.jpg"), url("../img/girl-flag-mobile@2x.jpg");
+      background-size: 103px auto, 424px auto;
     }
   }
 

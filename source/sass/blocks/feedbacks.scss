@@ -10,6 +10,7 @@
   background-image: url("../img/feedbacks-sketch-desktop@1x.png"), url("../img/feedbacks-bg-desktop@1x.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: top 56px right -12px, top 38px right 0;
+  background-size: 523px auto, 1259px auto;
   background-color: #ffffff;
 }
 
@@ -17,6 +18,7 @@
   (min-resolution: 1.5dppx) {
   .feedbacks {
     background-image: url("../img/feedbacks-sketch-desktop@2x.png"), url("../img/feedbacks-bg-desktop@2x.jpg");
+    background-size: 523px auto, 1259px auto;
   }
 }
 
@@ -242,6 +244,7 @@
     background-image: url("../img/feedbacks-sketch-mobile@1x.jpg");
     background-repeat: no-repeat;
     background-position: top 526px right -151px;
+    background-size: 288px auto;
   }
 
 

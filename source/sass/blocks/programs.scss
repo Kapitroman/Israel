@@ -10,12 +10,14 @@
   background-repeat: no-repeat;
   background-position: right 56px;
   background-color: #ffffff;
+  background-size: 680px auto;
 }
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .programs {
     background-image: url("../img/sketch-desktop@2x.jpg");
+    background-size: 680px auto;
   }
 }
 
@@ -239,7 +241,14 @@
     padding-top: 80px;
     padding-bottom: 32px;
     background-position: right -24px top 198px;
-    background-size: 100% auto;
+    background-size: 320px auto;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .programs {
+      background-size: 320px auto;
+    }
   }
 
   .programs h2 {

@@ -665,11 +665,13 @@ input[type="checkbox"]:checked + label::after {
   background-image: url("../img/sketch-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-position: right 56px;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  background-size: 680px auto; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .programs {
-    background-image: url("../img/sketch-desktop@2x.jpg"); } }
+    background-image: url("../img/sketch-desktop@2x.jpg");
+    background-size: 680px auto; } }
 
 .programs h2 {
   margin-left: 15.37%;
@@ -875,7 +877,13 @@ input[type="checkbox"]:checked + label::after {
     padding-top: 80px;
     padding-bottom: 32px;
     background-position: right -24px top 198px;
-    background-size: 100% auto; }
+    background-size: 320px auto; } }
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .programs {
+    background-size: 320px auto; } }
+
+@media (max-width: 767px) {
   .programs h2 {
     margin-left: 0;
     margin-bottom: 16px;
@@ -994,11 +1002,13 @@ input[type="checkbox"]:checked + label::after {
   padding-right: 15.37%;
   background-image: url("../img/backpack-desktop@1x.png"), url("../img/girl-flag-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: left 0 top 135px, top 0 right 0; }
+  background-position: left 0 top 135px, top 0 right 0;
+  background-size: 147px auto, 818px auto; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .desire-trip {
-    background-image: url("../img/backpack-desktop@2x.png"), url("../img/girl-flag-desktop@2x.jpg"); } }
+    background-image: url("../img/backpack-desktop@2x.png"), url("../img/girl-flag-desktop@2x.jpg");
+    background-size: 147px auto, 818px auto; } }
 
 .desire-trip h2 {
   margin-bottom: 24px; }
@@ -1121,11 +1131,13 @@ input[type="checkbox"]:checked + label::after {
     padding-left: 5%;
     padding-right: 5%;
     background-image: url("../img/backpack-mobile@1x.jpg"), url("../img/girl-flag-mobile@1x.jpg");
-    background-position: left 0 top 0, bottom 0 right 50%; } }
+    background-position: left 0 top 0, bottom 0 right 50%;
+    background-size: 103px auto, 424px auto; } }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .desire-trip {
-    background-image: url("../img/backpack-mobile@2x.jpg"), url("../img/girl-flag-mobile@2x.jpg"); } }
+    background-image: url("../img/backpack-mobile@2x.jpg"), url("../img/girl-flag-mobile@2x.jpg");
+    background-size: 103px auto, 424px auto; } }
 
 @media (max-width: 767px) {
   .desire-trip h2 {
@@ -1181,12 +1193,14 @@ input[type="checkbox"]:checked + label::after {
   background-image: url("../img/stamp-desktop@1x.jpg"), url("../img/how-travel-desktop@1x.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: right 0 top 410px, top 0 right 0;
+  background-size: 216px auto, 1366px auto;
   z-index: -2;
   background-color: #ffffff; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .requirements {
-    background-image: url("../img/stamp-desktop@2x.jpg"), url("../img/how-travel-desktop@2x.jpg"); } }
+    background-image: url("../img/stamp-desktop@2x.jpg"), url("../img/how-travel-desktop@2x.jpg");
+    background-size: 216px auto, 1366px auto; } }
 
 .requirements__wrap-img {
   max-width: 1223px;
@@ -1197,11 +1211,13 @@ input[type="checkbox"]:checked + label::after {
   padding-right: 0;
   background-image: url("../img/go-trip-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: top 0 left 0; }
+  background-position: top 0 left 0;
+  background-size: 581px auto; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .requirements__wrap-img {
-    background-image: url("../img/go-trip-desktop@2x.png"); } }
+    background-image: url("../img/go-trip-desktop@2x.png");
+    background-size: 581px auto; } }
 
 .requirements__text {
   max-width: 552px;
@@ -1320,11 +1336,13 @@ input[type="checkbox"]:checked + label::after {
     background-image: url("../img/stamp-mobile@1x.jpg");
     background-repeat: no-repeat;
     background-position: right 0 top 355px;
+    background-size: 216px auto;
     z-index: 0; } }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .requirements {
-    background-image: url("../img/stamp-mobile@2x.jpg"); } }
+    background-image: url("../img/stamp-mobile@2x.jpg");
+    background-size: 216px auto; } }
 
 @media (max-width: 767px) {
   .requirements__wrap-img {
@@ -1393,11 +1411,13 @@ input[type="checkbox"]:checked + label::after {
   background-image: url("../img/watch@1x.png"), url("../img/life-bg-desktop@1x.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: right 0 top 656px, left 0 top 0;
+  background-size: 90px auto, 1366px auto;
   z-index: 1; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .life {
-    background-image: url("../img/watch@2x.png"), url("../img/life-bg-desktop@2x.jpg"); } }
+    background-image: url("../img/watch@2x.png"), url("../img/life-bg-desktop@2x.jpg");
+    background-size: 90px auto, 1366px auto; } }
 
 .life h2 {
   text-align: center;
@@ -1627,13 +1647,15 @@ input[type="checkbox"]:checked + label::after {
   min-height: 583px;
   padding-top: 120px;
   background-image: url("../img/masaisrael-desktop@1x.jpg");
-  background-color: #ffffff;
+  background-color: #917989;
   background-repeat: no-repeat;
-  background-position: 3px 0; }
+  background-position: 0 0;
+  background-size: 1366px auto; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .blog {
-    background-image: url("../img/masaisrael-desktop@2x.jpg"); } }
+    background-image: url("../img/masaisrael-desktop@2x.jpg");
+    background-size: 1366px auto; } }
 
 .blog__wrap {
   display: -webkit-box;
@@ -1742,12 +1764,14 @@ input[type="checkbox"]:checked + label::after {
     font-size: 16px;
     line-height: 26px;
     background-image: url("../img/masaisrael-mobile@1x.jpg");
-    background-color: burlywood;
-    background-position: top 0 left -69px; } }
+    background-color: #917989;
+    background-position: top 0 left -69px;
+    background-size: 633px auto; } }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .blog__wrap p {
-    background-image: url("../img/masaisrael-mobile@2x.jpg"); } }
+    background-image: url("../img/masaisrael-mobile@2x.jpg");
+    background-size: 633px auto; } }
 
 @media (max-width: 767px) {
   .blog__wrap a {
@@ -1771,21 +1795,25 @@ input[type="checkbox"]:checked + label::after {
   background-image: url("../img/bag-desktop@1x.png"), url("../img/questions-bg-desktop@1x.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: left 0 top 806px, top 0 right 0;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  background-size: 153px auto, 1366px auto; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .questions {
-    background-image: url("../img/bag-desktop@2x.png"), url("../img/questions-bg-desktop@2x.jpg"); } }
+    background-image: url("../img/bag-desktop@2x.png"), url("../img/questions-bg-desktop@2x.jpg");
+    background-size: 153px auto, 1366px auto; } }
 
 .questions__wrap {
   min-height: 803px;
   background-image: url("../img/questions-img@1x.png");
   background-repeat: no-repeat;
-  background-position: top 0 left 611px; }
+  background-position: top 0 left 611px;
+  background-size: 645px auto; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .questions__wrap {
-    background-image: url("../img/questions-img@2x.png"); } }
+    background-image: url("../img/questions-img@2x.png");
+    background-size: 645px auto; } }
 
 .questions__text h2 {
   margin-bottom: 30px; }
@@ -1824,10 +1852,6 @@ input[type="checkbox"]:checked + label::after {
   letter-spacing: 0;
   color: #484848; }
 
-/*
-.questions__wrap-head:hover p {
-  opacity: 0.8;
-}*/
 .questions__list span {
   position: absolute;
   left: 0;
@@ -1865,6 +1889,15 @@ input[type="checkbox"]:checked + label::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg); }
 
+@media (max-width: 1023px) {
+  .questions__wrap {
+    min-height: auto;
+    background-image: none; } }
+
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
+  .questions__wrap {
+    background-image: none; } }
+
 @media (max-width: 767px) {
   .questions {
     min-height: auto;
@@ -1874,20 +1907,11 @@ input[type="checkbox"]:checked + label::after {
     padding-right: 10%;
     background-image: url("../img/bag-desktop@1x.png");
     background-repeat: no-repeat;
-    background-position: left 0 top 660px; } }
+    background-position: left 0 top 560px; } }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .questions {
     background-image: url("../img/bag-desktop@2x.png"); } }
-
-@media (max-width: 767px) {
-  .questions__wrap {
-    min-height: auto;
-    background-image: none; } }
-
-@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
-  .questions__wrap {
-    background-image: none; } }
 
 @media (max-width: 767px) {
   .questions__text h2 {
@@ -1919,7 +1943,8 @@ input[type="checkbox"]:checked + label::after {
 @media (max-width: 320px) {
   .questions {
     padding-left: 5%;
-    padding-right: 5%; }
+    padding-right: 5%;
+    background-position: left 0 top 660px; }
   .questions__list h4 {
     max-width: 260px;
     padding-right: 0; }
@@ -1941,11 +1966,13 @@ input[type="checkbox"]:checked + label::after {
   background-image: url("../img/feedbacks-sketch-desktop@1x.png"), url("../img/feedbacks-bg-desktop@1x.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: top 56px right -12px, top 38px right 0;
+  background-size: 523px auto, 1259px auto;
   background-color: #ffffff; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .feedbacks {
-    background-image: url("../img/feedbacks-sketch-desktop@2x.png"), url("../img/feedbacks-bg-desktop@2x.jpg"); } }
+    background-image: url("../img/feedbacks-sketch-desktop@2x.png"), url("../img/feedbacks-bg-desktop@2x.jpg");
+    background-size: 523px auto, 1259px auto; } }
 
 .feedbacks h2 {
   text-align: center;
@@ -2154,7 +2181,8 @@ input[type="checkbox"]:checked + label::after {
     padding-bottom: 0;
     background-image: url("../img/feedbacks-sketch-mobile@1x.jpg");
     background-repeat: no-repeat;
-    background-position: top 526px right -151px; } }
+    background-position: top 526px right -151px;
+    background-size: 288px auto; } }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .feedbacks {
@@ -2238,11 +2266,13 @@ input[type="checkbox"]:checked + label::after {
   font-family: "Fira Sans", "Verdana", sans-serif;
   background-image: url("../img/details-bg-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: top 0 left 0; }
+  background-position: top 0 left 0;
+  background-size: 1366px auto; }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .details {
-    background-image: url("../img/details-bg-desktop@2x.jpg"); } }
+    background-image: url("../img/details-bg-desktop@2x.jpg");
+    background-size: 1366px auto; } }
 
 .details__contacts {
   max-width: 515px;

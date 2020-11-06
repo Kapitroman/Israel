@@ -16,12 +16,14 @@
   background-image: url("../img/details-bg-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-position: top 0 left 0;
+  background-size: 1366px auto;
 }
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .details {
     background-image: url("../img/details-bg-desktop@2x.jpg");
+    background-size: 1366px auto;
   }
 }
 

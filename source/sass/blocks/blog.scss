@@ -7,15 +7,17 @@
   min-height: 583px;
   padding-top: 120px;
   background-image: url("../img/masaisrael-desktop@1x.jpg");
-  background-color: #ffffff;
+  background-color: #917989;
   background-repeat: no-repeat;
-  background-position: 3px 0;
+  background-position: 0 0;
+  background-size: 1366px auto;
 }
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .blog {
     background-image: url("../img/masaisrael-desktop@2x.jpg");
+    background-size: 1366px auto;
   }
 }
 
@@ -137,14 +139,16 @@
     font-size: 16px;
     line-height: 26px;
     background-image: url("../img/masaisrael-mobile@1x.jpg");
-    background-color: burlywood;
+    background-color: #917989;
     background-position: top 0 left -69px;
+    background-size: 633px auto;
   }
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
     .blog__wrap p {
       background-image: url("../img/masaisrael-mobile@2x.jpg");
+      background-size: 633px auto;
     }
   }
 

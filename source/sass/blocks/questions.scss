@@ -12,12 +12,14 @@
   background-repeat: no-repeat, no-repeat;
   background-position: left 0 top 806px, top 0 right 0;
   background-color: #ffffff;
+  background-size: 153px auto, 1366px auto;
 }
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .questions {
     background-image: url("../img/bag-desktop@2x.png"), url("../img/questions-bg-desktop@2x.jpg");
+    background-size: 153px auto, 1366px auto;
   }
 }
 
@@ -26,12 +28,14 @@
   background-image: url("../img/questions-img@1x.png");
   background-repeat: no-repeat;
   background-position: top 0 left 611px;
+  background-size: 645px auto;
 }
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .questions__wrap {
     background-image: url("../img/questions-img@2x.png");
+    background-size: 645px auto;
   }
 }
 
@@ -78,10 +82,6 @@
   letter-spacing: 0;
   color: #484848;
 }
-/*
-.questions__wrap-head:hover p {
-  opacity: 0.8;
-}*/
 
 .questions__list span {
   position: absolute;
@@ -124,25 +124,7 @@
   transform: rotate(180deg);
 }
 
-@media (max-width: 767px) {
-  .questions {
-    min-height: auto;
-    padding-top: 0;
-    padding-bottom: 59px;
-    padding-left: 10%;
-    padding-right: 10%;
-    background-image: url("../img/bag-desktop@1x.png");
-    background-repeat: no-repeat;
-    background-position: left 0 top 660px;
-  }
-
-  @media (min-resolution: 144dpi),
-    (min-resolution: 1.5dppx) {
-    .questions {
-      background-image: url("../img/bag-desktop@2x.png");
-    }
-  }
-
+@media (max-width: 1023px) {
   .questions__wrap {
     min-height: auto;
     background-image: none;
@@ -152,6 +134,26 @@
     (min-resolution: 1.5dppx) {
     .questions__wrap {
       background-image: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .questions {
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 59px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-image: url("../img/bag-desktop@1x.png");
+    background-repeat: no-repeat;
+    background-position: left 0 top 560px;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .questions {
+      background-image: url("../img/bag-desktop@2x.png");
     }
   }
 
@@ -195,6 +197,7 @@
   .questions {
     padding-left: 5%;
     padding-right: 5%;
+    background-position: left 0 top 660px;
   }
 
   .questions__list h4 {
