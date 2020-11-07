@@ -93,15 +93,23 @@
 }
 
 @media (max-width: 1023px) {
+  .blog {
+    padding-top: 150px;
+  }
+
   .blog__wrap {
     margin-left: 45%;
     margin-right: 10%;
+  }
+
+  .blog__wrap h2 {
+    margin-bottom: 34px;
   }
 }
 
 @media (max-width: 767px) {
   .blog {
-    min-height: 391px;
+    min-height: auto;
     margin-bottom: 80px;
     padding-top: 0;
     background-color: #ffffff;
@@ -117,8 +125,9 @@
   }
 
   .blog__wrap {
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 767px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .blog__wrap h2 {
@@ -130,25 +139,26 @@
   }
 
   .blog__wrap p {
+    min-height: 329px;
     margin-top: -4px;
     margin-bottom: 16px;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-bottom: 40px;
-    padding-left: 7.5%;
-    padding-right: 7.8%;
+    padding-left: 15%;
+    padding-right: 15%;
     font-size: 16px;
     line-height: 26px;
-    background-image: url("../img/masaisrael-mobile@1x.jpg");
+    background-image: url("../img/masaisrael-desktop@1x.jpg");
     background-color: #917989;
-    background-position: top 0 left -69px;
-    background-size: 633px auto;
+    background-position: top 0 left 0;
+    background-size: 767px auto;
   }
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
     .blog__wrap p {
-      background-image: url("../img/masaisrael-mobile@2x.jpg");
-      background-size: 633px auto;
+      background-image: url("../img/masaisrael-desktop@2x.jpg");
+      background-size: 767px auto;
     }
   }
 
@@ -161,5 +171,35 @@
 
   .blog__icon {
     left: 57px;
+  }
+}
+
+@media (max-width: 320px) {
+  .blog {
+    min-height: 391px;
+  }
+
+
+  .blog__wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .blog__wrap p {
+    min-height: auto;
+    padding-top: 100px;
+    padding-left: 7.5%;
+    padding-right: 7.8%;
+    background-image: url("../img/masaisrael-mobile@1x.jpg");
+    background-position: top 0 left -69px;
+    background-size: 633px auto;
+  }
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    .blog__wrap p {
+      background-image: url("../img/masaisrael-mobile@2x.jpg");
+      background-size: 633px auto;
+    }
   }
 }
