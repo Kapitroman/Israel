@@ -1,5 +1,39 @@
 'use strict';
 
+(function() {
+
+  // проверяем поддержку
+  if (!Element.prototype.matches) {
+
+    // определяем свойство
+    Element.prototype.matches = Element.prototype.matchesSelector ||
+      Element.prototype.webkitMatchesSelector ||
+      Element.prototype.mozMatchesSelector ||
+      Element.prototype.msMatchesSelector;
+
+  }
+
+})();
+
+(function() {
+
+  // проверяем поддержку
+  if (!Element.prototype.closest) {
+
+    // реализуем
+    Element.prototype.closest = function(css) {
+      var node = this;
+
+      while (node) {
+        if (node.matches(css)) return node;
+        else node = node.parentElement;
+      }
+      return null;
+    };
+  }
+
+})();
+
 (function () {
 
   var linkOrderCall = document.querySelector('.page-header__order-call');
@@ -132,7 +166,7 @@
   });
 
   window.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
+    if (evt.key === 'Escape' || evt.keyCode === 27) {
       evt.preventDefault();
       if (sectionOrderCall.classList.contains("modal-show")) {
         closeModal();
@@ -148,8 +182,10 @@
 (function() {
 
   var programsWrap = document.querySelector('.programs__wrap');
-  var programsTabs = Array.from(programsWrap.querySelectorAll('.programs__tabs-list li'));
-  var programsContents = Array.from(programsWrap.querySelectorAll('.programs__item'));
+  //var programsTabs = Array.from(programsWrap.querySelectorAll('.programs__tabs-list li'));
+  //var programsContents = Array.from(programsWrap.querySelectorAll('.programs__item'));
+  var programsTabs = programsWrap.querySelectorAll('.programs__tabs-list li');
+  var programsContents = programsWrap.querySelectorAll('.programs__item');
   var programTabsList = programsWrap.querySelector('.programs__tabs-list');
 
   var numberActive = 1;
@@ -170,7 +206,7 @@
     }
     programsTabs[numberActive].classList.remove('programs__tab-active');
     programsContents[numberActive].classList.remove('programs__show');
-    numberActive = programsTabs.indexOf(evt.target.closest('.programs__tabs-list li'));
+    numberActive = [].indexOf.call(programsTabs, evt.target.closest('.programs__tabs-list li'));
     programsTabs[numberActive].classList.add('programs__tab-active');
     programsContents[numberActive].classList.add('programs__show');
   }
@@ -268,7 +304,7 @@
   });
 
   window.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
+    if (evt.key === 'Escape' || evt.keyCode === 27) {
       evt.preventDefault();
 
       if (sectionOrderDelivered.classList.contains("modal-show")) {
@@ -284,7 +320,7 @@
   var sliderGallery = document.querySelector('.life');
   var imageSlider = sliderGallery.querySelector('.life__pictures');
   var sliderController = sliderGallery.querySelector('.life__controller');
-  var sliderPoints = Array.from(sliderGallery.querySelectorAll('.life__point'));
+  var sliderPoints = sliderGallery.querySelectorAll('.life__point');
   var mobile;
 
   if (window.innerWidth < 768) {
@@ -338,7 +374,7 @@
           }
         }
         //activePoint.classList.remove('life__point-active');
-        numberPoint = sliderPoints.indexOf(point);
+        numberPoint = [].indexOf.call(sliderPoints, point);
         point.classList.add('life__point-active');
         //activePoint = point;
         imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
@@ -527,7 +563,7 @@
   });
 
   window.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
+    if (evt.key === 'Escape' || evt.keyCode === 27) {
       evt.preventDefault();
 
       if (sectionOrderDelivered.classList.contains("modal-show")) {

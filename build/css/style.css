@@ -852,6 +852,8 @@ input[type="checkbox"]:checked + label::after {
   margin-bottom: 24px; }
 
 .programs__item p {
+  max-width: 555px;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-size: 15px;
