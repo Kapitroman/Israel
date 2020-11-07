@@ -458,20 +458,20 @@
     <form class="order-call__form" action="https://echo.htmlacademy.ru" method="get">
       <h3>Заказать звонок</h3>
       <p>Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос! </p>
-      <input type="text" placeholder="имя" name="name" id="name" pattern="^[а-яА-ЯёЁa-zA-Z\s]+$" required="">
+      <input type="text" placeholder="имя" name="name" id="name" pattern="^[а-яА-ЯёЁa-zA-Z\s]+$" required="" tabindex="1">
       <label class="visually-hidden" for="name"></label>
       <span>Ошибка: неверный формат</span>
-      <input type="tel" placeholder="телефон" name="phone" id="phone" pattern="[\+0-9\s]{10,16}" required="">
+      <input type="tel" placeholder="телефон" name="phone" id="phone" pattern="[\+0-9\s]{10,16}" required="" tabindex="2">
       <label class="visually-hidden" for="phone"></label>
       <span>Ошибка: неверный формат</span>
-      <button type="submit">перезвоните мне</button>
+      <button type="submit" tabindex="4">перезвоните мне</button>
       <div class="order-call__agreement">
-        <input class="visually-hidden" type="checkbox" id="agreement" required="">
+        <input class="visually-hidden" type="checkbox" id="agreement" required="" tabindex="3">
         <label for="agreement">
           Нажимая на кнопку, вы даёте согласие на обработку персональных данных
         </label>
       </div>
-      <button class="order-call__close" type="button">
+      <button class="order-call__close" type="button" tabindex="5">
         <svg width="18" height="17" focusable="false"><use xlink:href="#icon-close"></use></svg>
         <span class="visually-hidden">Закрыть</span>
       </button>

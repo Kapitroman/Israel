@@ -60,13 +60,6 @@
 
 .order-call__form input::placeholder {
   font-family: "Fira Sans", "Verdana", sans-serif;
-  /*
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0.1em;
-  font-variant: small-caps;
-  color: #484848;*/
   opacity: 0.5;
 }
 
@@ -102,10 +95,6 @@
 .order-call__form span {
   display: none;
 }
-/*
-.error-hide {
-  display: none;
-}*/
 
 .order-call__form span.error-show {
   display: block;
