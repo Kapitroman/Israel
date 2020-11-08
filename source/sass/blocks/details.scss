@@ -398,7 +398,7 @@
     margin-bottom: -15px;
   }
 
-  .details__map img + img {
+  .details__map picture + img {
     width: 26px;
     height: 40px;
     top: 210px;
@@ -434,6 +434,7 @@
 
   .details__input {
     max-width: 288px;
+    width: 100%;
     margin-right: 0;
     margin-bottom: 8px;
   }
