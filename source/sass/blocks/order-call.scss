@@ -243,13 +243,13 @@ input[type="checkbox"]:checked + label::after {
   .order-call__form {
     position: fixed;
     top: 0;
-    left: 50%;
     transform: translate(-50%);
-    width: 320px;
+    max-width: 767px;
+    width: 100%;
     border-radius: 0;
     padding-top: 169px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-bottom: 169px;
     box-shadow: none;
   }
@@ -259,18 +259,31 @@ input[type="checkbox"]:checked + label::after {
   }
 
   .order-call__form p {
-    padding-right: 5px;
+    max-width: 360px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 14px;
     line-height: 22px;
     text-align: center;
   }
 
+  .order-call__form input {
+    display: block;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .order-call__form button[type="submit"] {
-    margin-left: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .order-call__agreement {
-    margin-left: 12px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .order-call__close {
@@ -280,12 +293,6 @@ input[type="checkbox"]:checked + label::after {
 
   .order-call__form--delivered {
     padding-top: 200px;
-    padding-left: 17px;
-    padding-right: 16px;
     padding-bottom: 292px;
-  }
-
-  .order-call__form--delivered button[type="submit"] {
-    margin-left: 12px;
   }
 }
