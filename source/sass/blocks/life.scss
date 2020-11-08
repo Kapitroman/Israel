@@ -291,5 +291,10 @@
     background-color: #ffd701;
     border: 1px solid #ffc341;
     cursor: default;
+    opacity: 0.8;
+  }
+
+  .life__point-active:hover {
+    cursor: default;
   }
 }
