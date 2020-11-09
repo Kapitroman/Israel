@@ -279,13 +279,16 @@
   }
 
   .programs__tabs-list li a {
-    width: auto;
+    /*width: auto;*/
+    width: 180px;
     min-height: 48px;
     padding-left: 52px;
     padding-right: 12px;
     padding-top: 15px;
     padding-bottom: 15px;
     background-position: 12px 8px;
+    cursor: default;
+    pointer-events: none;
   }
 
   .programs__tabs-list li.programs__tab-active {
@@ -373,7 +376,8 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      margin-left: -38px;
+      /*margin-left: -38px;*/
+      margin-left: -110px;
       margin-right: -68px;
       margin-bottom: 30px;
       padding: 0;

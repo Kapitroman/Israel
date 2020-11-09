@@ -369,13 +369,12 @@ window.swipe = function(el, settings) {
 (function() {
 
   var programsWrap = document.querySelector('.programs__wrap');
-  //var programsTabs = Array.from(programsWrap.querySelectorAll('.programs__tabs-list li'));
-  //var programsContents = Array.from(programsWrap.querySelectorAll('.programs__item'));
   var programsTabs = programsWrap.querySelectorAll('.programs__tabs-list li');
   var programsContents = programsWrap.querySelectorAll('.programs__item');
   var programTabsList = programsWrap.querySelector('.programs__tabs-list');
 
   var numberActive = 1;
+  var mobile;
 
   for (var i = 0; i < programsContents.length; i++) {
     programsContents[i].classList.add('programs__hide');
@@ -383,6 +382,8 @@ window.swipe = function(el, settings) {
 
   programsTabs[1].classList.add('programs__tab-active');
   programsContents[1].classList.add('programs__show');
+
+  window.swipe(programTabsList, { maxTime: 1000, minTime: 100, maxDist: 150,  minDist: 60 });
 
   function tabsToggleClickHandler(evt) {
     evt.preventDefault();
@@ -398,12 +399,63 @@ window.swipe = function(el, settings) {
     programsContents[numberActive].classList.add('programs__show');
   }
 
-  programTabsList.addEventListener('click', tabsToggleClickHandler);
-/*
-  if (window.innerWidth < 768) {
-
+  function tabsToggleSwipeHandler(evt) {
+    evt.preventDefault();
+    if (evt.detail.dir === "left") {
+      if (numberActive === programsContents.length - 1) {
+        return;
+      }
+      programsTabs[numberActive].classList.remove('programs__tab-active');
+      programsContents[numberActive].classList.remove('programs__show');
+      numberActive++;
+      programsTabs[numberActive].classList.add('programs__tab-active');
+      programsContents[numberActive].classList.add('programs__show');
+      programTabsList.style.marginLeft = (-180 * numberActive + 70) + 'px';
+    }
+    if (evt.detail.dir === "right") {
+      if (numberActive === 0) {
+        return;
+      }
+      programsTabs[numberActive].classList.remove('programs__tab-active');
+      programsContents[numberActive].classList.remove('programs__show');
+      numberActive--;
+      programsTabs[numberActive].classList.add('programs__tab-active');
+      programsContents[numberActive].classList.add('programs__show');
+      programTabsList.style.marginLeft = (-180 * numberActive + 70) + 'px';
+    }
+    return;
   }
-*/
+
+  if (window.innerWidth < 768) {
+    programTabsList.addEventListener('swipe', tabsToggleSwipeHandler);
+    mobile = true;
+  } else {
+    programTabsList.addEventListener('click', tabsToggleClickHandler);
+    mobile = false;
+  }
+
+  window.addEventListener('resize', function () {
+    if(window.innerWidth < 768 && !mobile) {
+      programTabsList.addEventListener('swipe', tabsToggleSwipeHandler);
+      programTabsList.removeEventListener('click', tabsToggleClickHandler);
+      mobile = true;
+    }
+    if (window.innerWidth < 768 && mobile) {
+      return;
+    }
+    if (window.innerWidth >= 768 && !mobile) {
+      return;
+    }
+    if (window.innerWidth >= 768 && mobile) {
+      programTabsList.removeEventListener('swipe', tabsToggleSwipeHandler);
+      programTabsList.addEventListener('click', tabsToggleClickHandler);
+      mobile = false;
+    }
+  }, false);
+
+
+
+
 })();
 
 (function () {
@@ -514,6 +566,8 @@ window.swipe = function(el, settings) {
   var sliderPoints = sliderGallery.querySelectorAll('.life__point');
   var mobile;
 
+  window.swipe(imageSlider, { maxTime: 1000, minTime: 100, maxDist: 150,  minDist: 60 });
+
   if (window.innerWidth < 768) {
     mobile = true;
     slider();
@@ -542,6 +596,8 @@ window.swipe = function(el, settings) {
       }
       imageSlider.style.marginLeft = '0px';
       sliderController.removeEventListener('click', clickOnPointHandler);
+
+      imageSlider.removeEventListener('swipe', swipeSliderHandler);
     }
   }, false);
 
@@ -573,6 +629,30 @@ window.swipe = function(el, settings) {
     }
 
     sliderController.addEventListener('click', clickOnPointHandler);
+
+    function swipeSliderHandler(evt) {
+      if (evt.detail.dir === "left") {
+        if (numberPoint === sliderPoints.length - 1) {
+          return;
+        }
+        sliderPoints[numberPoint].classList.remove('life__point-active');
+        numberPoint++;
+        sliderPoints[numberPoint].classList.add('life__point-active');
+        imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
+      }
+      if (evt.detail.dir === "right") {
+        if (numberPoint === 0) {
+          return;
+        }
+        sliderPoints[numberPoint].classList.remove('life__point-active');
+        numberPoint--;
+        sliderPoints[numberPoint].classList.add('life__point-active');
+        imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
+      }
+      return;
+    }
+
+    imageSlider.addEventListener('swipe', swipeSliderHandler);
   }
 
 })();
@@ -639,10 +719,10 @@ window.swipe = function(el, settings) {
 
   sliderWrap.addEventListener("swipe", function(evt) {
     if (evt.detail.dir === "left") {
-      left();
+      right();
     }
     if (evt.detail.dir === "right") {
-      right();
+      left();
     }
     return;
   });
