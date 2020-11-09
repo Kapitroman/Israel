@@ -1447,7 +1447,8 @@ input[type="checkbox"]:checked + label::after {
   margin-bottom: 30px; }
 
 .life__img img {
-  display: block; }
+  display: block;
+  pointer-events: none; }
 
 .life__img span {
   position: absolute;
@@ -1608,18 +1609,10 @@ input[type="checkbox"]:checked + label::after {
     border-radius: 50%;
     background-color: #484848;
     opacity: 0.2; }
-  .life__point:hover {
-    cursor: pointer;
-    opacity: 0.7; }
-  .life__point:focus {
-    outline: 1px solid #1fc0fc; }
   .life__point-active {
     background-color: #ffd701;
     border: 1px solid #ffc341;
-    cursor: default;
-    opacity: 0.8; }
-  .life__point-active:hover {
-    cursor: default; } }
+    opacity: 0.8; } }
 
 .blog {
   max-width: 1366px;

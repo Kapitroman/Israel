@@ -453,9 +453,6 @@ window.swipe = function(el, settings) {
     }
   }, false);
 
-
-
-
 })();
 
 (function () {
@@ -595,7 +592,7 @@ window.swipe = function(el, settings) {
         }
       }
       imageSlider.style.marginLeft = '0px';
-      sliderController.removeEventListener('click', clickOnPointHandler);
+      //sliderController.removeEventListener('click', clickOnPointHandler);
 
       imageSlider.removeEventListener('swipe', swipeSliderHandler);
     }
@@ -608,7 +605,7 @@ window.swipe = function(el, settings) {
     var numberPoint = 0;
     sliderPoints[0].classList.add('life__point-active');
     //var activePoint = sliderPoints[0];
-
+/*
     function clickOnPointHandler(evt) {
       var point = evt.target;
       if (!point.classList.contains('life__point') || point.classList.contains('life__point-active')) {
@@ -627,8 +624,8 @@ window.swipe = function(el, settings) {
         imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
       }
     }
-
-    sliderController.addEventListener('click', clickOnPointHandler);
+*/
+    //sliderController.addEventListener('click', clickOnPointHandler);
 
     function swipeSliderHandler(evt) {
       if (evt.detail.dir === "left") {
