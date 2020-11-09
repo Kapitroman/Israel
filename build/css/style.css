@@ -1100,6 +1100,12 @@ input[type="checkbox"]:checked + label::after {
 .desire-trip__form button[type="submit"]:active {
   background-image: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), linear-gradient(109.15deg, #ffc341 -50.3%, #ffd701 63.1%); }
 
+@media (max-width: 1023px) {
+  .desire-trip {
+    padding-top: 55px;
+    padding-left: 5%;
+    background-position: left 0 top 135px, top 0 right -50px; } }
+
 @media (max-width: 767px) {
   .desire-trip {
     min-height: 647px;
@@ -1166,7 +1172,7 @@ input[type="checkbox"]:checked + label::after {
   font-family: "Fira Sans", "Verdana", sans-serif;
   color: #484848;
   opacity: 0.87;
-  background-image: url("../img/stamp-desktop@1x.png"), url("../img/how-travel-desktop@1x.png");
+  background-image: url("../img/stamp-desktop@1x.png"), url("../img/how-travel-desktop@1x.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: right 0 top 410px, top 0 right 0;
   background-size: 216px auto, 1366px auto;

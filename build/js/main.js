@@ -19,32 +19,30 @@ Object.assign||Object.defineProperty(Object,"assign",{enumerable:!1,configurable
  */
 window.swipe = function(el, settings) {
 
-    // настройки по умолчанию
     var settings = Object.assign({}, {
-        minDist: 60,  // минимальная дистанция, которую должен пройти указатель, чтобы жест считался как свайп (px)
-        maxDist: 120, // максимальная дистанция, не превышая которую может пройти указатель, чтобы жест считался как свайп (px)
-        maxTime: 700, // максимальное время, за которое должен быть совершен свайп (ms)
-        minTime: 50   // минимальное время, за которое должен быть совершен свайп (ms)
+        minDist: 60,
+        maxDist: 120,
+        maxTime: 700,
+        minTime: 50
     }, settings);
 
-    // коррекция времени при ошибочных значениях
     if (settings.maxTime < settings.minTime) settings.maxTime = settings.minTime + 500;
     if (settings.maxTime < 100 || settings.minTime < 50) {
         settings.maxTime = 700;
         settings.minTime = 50;
     }
 
-    var dir,                // направление свайпа (horizontal, vertical)
-        swipeType,            // тип свайпа (up, down, left, right)
-        dist,                 // дистанция, пройденная указателем
-        isMouse = false,      // поддержка мыши (не используется для тач-событий)
-        isMouseDown = false,  // указание на активное нажатие мыши (не используется для тач-событий)
-        startX = 0,           // начало координат по оси X (pageX)
-        distX = 0,            // дистанция, пройденная указателем по оси X
-        startY = 0,           // начало координат по оси Y (pageY)
-        distY = 0,            // дистанция, пройденная указателем по оси Y
-        startTime = 0,        // время начала касания
-        support = {           // поддерживаемые браузером типы событий
+    var dir,
+        swipeType,
+        dist,
+        isMouse = false,
+        isMouseDown = false,
+        startX = 0,
+        distX = 0,
+        startY = 0,
+        distY = 0,
+        startTime = 0,
+        support = {
             pointer: !!("PointerEvent" in window || ("msPointerEnabled" in window.navigator)),
             touch: !!(typeof window.orientation !== "undefined" || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || "ontouchstart" in window || navigator.msMaxTouchPoints || "maxTouchPoints" in window.navigator > 1 || "msMaxTouchPoints" in window.navigator > 1)
         };
@@ -64,7 +62,6 @@ window.swipe = function(el, settings) {
                     cancel: "PointerCancel",
                     leave:  "PointerLeave"
                 };
-                // добавление префиксов для IE10
                 var ie10 = (window.navigator.msPointerEnabled && Function('/*@cc_on return document.documentMode===10@*/')());
                 for (var value in events) {
                     if (value === "type") continue;
@@ -117,7 +114,7 @@ window.swipe = function(el, settings) {
         startX = event.pageX;
         startY = event.pageY;
         startTime = new Date().getTime();
-        if (isMouse) isMouseDown = true; // поддержка мыши
+        if (isMouse) isMouseDown = true;
     };
 
     /**
@@ -125,7 +122,7 @@ window.swipe = function(el, settings) {
      * @param e {Event} - получает событие.
      */
     var checkMove = function(e) {
-        if (isMouse && !isMouseDown) return; // выход из функции, если мышь перестала быть активна во время движения
+        if (isMouse && !isMouseDown) return;
         var event = eventsUnify(e);
         distX = event.pageX - startX;
         distY = event.pageY - startY;
@@ -138,44 +135,40 @@ window.swipe = function(el, settings) {
      * @param e {Event} - получает событие.
      */
     var checkEnd = function(e) {
-        if (isMouse && !isMouseDown) { // выход из функции и сброс проверки нажатия мыши
+        if (isMouse && !isMouseDown) {
             isMouseDown = false;
             return;
         }
         var endTime = new Date().getTime();
         var time = endTime - startTime;
-        if (time >= settings.minTime && time <= settings.maxTime) { // проверка времени жеста
+        if (time >= settings.minTime && time <= settings.maxTime) {
             if (Math.abs(distX) >= settings.minDist && Math.abs(distY) <= settings.maxDist) {
-                swipeType = dir; // опредление типа свайпа как "left" или "right"
+                swipeType = dir;
             } else if (Math.abs(distY) >= settings.minDist && Math.abs(distX) <= settings.maxDist) {
-                swipeType = dir; // опредление типа свайпа как "top" или "down"
+                swipeType = dir;
             }
         }
-        dist = (dir === "left" || dir === "right") ? Math.abs(distX) : Math.abs(distY); // опредление пройденной указателем дистанции
+        dist = (dir === "left" || dir === "right") ? Math.abs(distX) : Math.abs(distY);
 
-        // генерация кастомного события swipe
         if (swipeType !== "none" && dist >= settings.minDist) {
             var swipeEvent = new CustomEvent("swipe", {
                 bubbles: true,
                 cancelable: true,
                 detail: {
-                    full: e, // полное событие Event
-                    dir:  swipeType, // направление свайпа
-                    dist: dist, // дистанция свайпа
-                    time: time // время, потраченное на свайп
+                    full: e,
+                    dir:  swipeType,
+                    dist: dist,
+                    time: time
                 }
             });
             el.dispatchEvent(swipeEvent);
         }
     };
 
-    // добавление поддерживаемых событий
     var events = getSupportedEvents();
 
-    // проверка наличия мыши
     if ((support.pointer && !support.touch) || events.type === "mouse") isMouse = true;
 
-    // добавление обработчиков на элемент
     el.addEventListener(events.start, checkStart);
     el.addEventListener(events.move, checkMove);
     el.addEventListener(events.end, checkEnd);
@@ -189,25 +182,19 @@ window.swipe = function(el, settings) {
 
 (function() {
 
-  // проверяем поддержку
   if (!Element.prototype.matches) {
-
-    // определяем свойство
     Element.prototype.matches = Element.prototype.matchesSelector ||
       Element.prototype.webkitMatchesSelector ||
       Element.prototype.mozMatchesSelector ||
       Element.prototype.msMatchesSelector;
-
   }
 
 })();
 
 (function() {
 
-  // проверяем поддержку
   if (!Element.prototype.closest) {
 
-    // реализуем
     Element.prototype.closest = function(css) {
       var node = this;
 
@@ -290,10 +277,7 @@ window.swipe = function(el, settings) {
     }
     inputName.focus();
   });
-  /*
-  errorMessageName.classList.add('error-hide');
-  errorMessageTel.classList.add('error-hide');
-  */
+
   sectionOrderCall.addEventListener('click', modalCloseClickHandler);
   sectionOrderDelivered.addEventListener('click', modalCloseClickHandler);
 
@@ -456,14 +440,11 @@ window.swipe = function(el, settings) {
 })();
 
 (function () {
-  //var linkOrderCall = document.querySelector('.page-header__order-call');
-  //var sectionOrderCall = document.querySelectorAll('.order-call')[0];
+
   var sectionOrderDelivered = document.querySelectorAll('.order-call')[1];
   var form = document.querySelector('.desire-trip__form');
   var body = document.querySelector('body');
-  //var inputName = sectionOrderCall.querySelector('[type="text"]');
   var inputTel = form.querySelector('[type="tel"]');
-  //var errorMessageName = sectionOrderCall.querySelectorAll('.order-call span')[0];
   var errorMessageTel = form.querySelector('span');
 
   var isStorageSupport = true;
@@ -559,9 +540,9 @@ window.swipe = function(el, settings) {
 
   var sliderGallery = document.querySelector('.life');
   var imageSlider = sliderGallery.querySelector('.life__pictures');
-  var sliderController = sliderGallery.querySelector('.life__controller');
   var sliderPoints = sliderGallery.querySelectorAll('.life__point');
   var mobile;
+  var numberPoint;
 
   window.swipe(imageSlider, { maxTime: 1000, minTime: 100, maxDist: 150,  minDist: 60 });
 
@@ -572,19 +553,41 @@ window.swipe = function(el, settings) {
     mobile = false;
   }
 
+  function swipeSliderHandler(evt) {
+    if (evt.detail.dir === "left") {
+      if (numberPoint === sliderPoints.length - 1) {
+        return;
+      }
+      sliderPoints[numberPoint].classList.remove('life__point-active');
+      numberPoint++;
+      sliderPoints[numberPoint].classList.add('life__point-active');
+      imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
+    }
+    if (evt.detail.dir === "right") {
+      if (numberPoint === 0) {
+        return;
+      }
+      sliderPoints[numberPoint].classList.remove('life__point-active');
+      numberPoint--;
+      sliderPoints[numberPoint].classList.add('life__point-active');
+      imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
+    }
+    return;
+  }
+
   window.addEventListener('resize', function (evt) {
-    if(evt.target.innerWidth < 768 && !mobile) {
+    if(window.innerWidth < 768 && !mobile) {
       mobile = true;
       slider();
       return;
     }
-    if (evt.target.innerWidth < 768 && mobile) {
+    if (window.innerWidth < 768 && mobile) {
       return;
     }
-    if (evt.target.innerWidth >= 768 && !mobile) {
+    if (window.innerWidth >= 768 && !mobile) {
       return;
     }
-    if (evt.target.innerWidth >= 768 && mobile) {
+    if (window.innerWidth >= 768 && mobile) {
       mobile = false;
       for (var i = 0; i < sliderPoints.length; i++ ) {
         if (sliderPoints[i].classList.contains('life__point-active')) {
@@ -592,63 +595,13 @@ window.swipe = function(el, settings) {
         }
       }
       imageSlider.style.marginLeft = '0px';
-      //sliderController.removeEventListener('click', clickOnPointHandler);
-
       imageSlider.removeEventListener('swipe', swipeSliderHandler);
     }
   }, false);
 
-
-
   function slider() {
-
-    var numberPoint = 0;
+    numberPoint = 0;
     sliderPoints[0].classList.add('life__point-active');
-    //var activePoint = sliderPoints[0];
-/*
-    function clickOnPointHandler(evt) {
-      var point = evt.target;
-      if (!point.classList.contains('life__point') || point.classList.contains('life__point-active')) {
-        return;
-      }
-      else {
-        for (var i = 0; i < sliderPoints.length; i++ ) {
-          if (sliderPoints[i].classList.contains('life__point-active')) {
-            sliderPoints[i].classList.remove('life__point-active');
-          }
-        }
-        //activePoint.classList.remove('life__point-active');
-        numberPoint = [].indexOf.call(sliderPoints, point);
-        point.classList.add('life__point-active');
-        //activePoint = point;
-        imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
-      }
-    }
-*/
-    //sliderController.addEventListener('click', clickOnPointHandler);
-
-    function swipeSliderHandler(evt) {
-      if (evt.detail.dir === "left") {
-        if (numberPoint === sliderPoints.length - 1) {
-          return;
-        }
-        sliderPoints[numberPoint].classList.remove('life__point-active');
-        numberPoint++;
-        sliderPoints[numberPoint].classList.add('life__point-active');
-        imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
-      }
-      if (evt.detail.dir === "right") {
-        if (numberPoint === 0) {
-          return;
-        }
-        sliderPoints[numberPoint].classList.remove('life__point-active');
-        numberPoint--;
-        sliderPoints[numberPoint].classList.add('life__point-active');
-        imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
-      }
-      return;
-    }
-
     imageSlider.addEventListener('swipe', swipeSliderHandler);
   }
 
@@ -727,15 +680,12 @@ window.swipe = function(el, settings) {
 })();
 
 (function () {
-  //var linkOrderCall = document.querySelector('.page-header__order-call');
-  //var sectionOrderCall = document.querySelectorAll('.order-call')[0];
+
   var sectionOrderDelivered = document.querySelectorAll('.order-call')[1];
   var form = document.querySelector('.details__form');
   var body = document.querySelector('body');
-  //var inputName = sectionOrderCall.querySelector('[type="text"]');
   var inputName = form.querySelector('[type="text"]');
   var inputTel = form.querySelector('[type="tel"]');
-  //var errorMessageName = sectionOrderCall.querySelectorAll('.order-call span')[0];
   var errorMessageName = form.querySelectorAll('span')[0];
   var errorMessageTel = form.querySelectorAll('span')[1];
 

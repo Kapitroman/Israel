@@ -131,6 +131,14 @@
     linear-gradient(109.15deg, #ffc341 -50.3%, #ffd701 63.1%);
 }
 
+@media (max-width: 1023px) {
+  .desire-trip {
+    padding-top: 55px;
+    padding-left: 5%;
+    background-position: left 0 top 135px, top 0 right -50px;
+  }
+}
+
 @media (max-width: 767px) {
   .desire-trip {
     min-height: 647px;
