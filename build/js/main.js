@@ -1,186 +1,6 @@
 'use strict';
 
 (function() {
-  /**
- * Object.assign() polyfill
- */
-Object.assign||Object.defineProperty(Object,"assign",{enumerable:!1,configurable:!0,writable:!0,value:function(a,b){"use strict";if(void 0===a||null===a)error("Cannot convert first argument to object");for(var c=Object(a),d=1;d<arguments.length;d++){var e=arguments[d];if(void 0!==e&&null!==e)for(var f=Object.keys(Object(e)),g=0,h=f.length;g<h;g++){var i=f[g],j=Object.getOwnPropertyDescriptor(e,i);void 0!==j&&j.enumerable&&(c[i]=e[i])}}return c}});
-
-/**
- * CustomEvent() polyfill
- */
-!function(){if("function"==typeof window.CustomEvent)return;function t(t,e){e=e||{bubbles:!1,cancelable:!1,detail:void 0};var n=document.createEvent("CustomEvent");return n.initCustomEvent(t,e.bubbles,e.cancelable,e.detail),n}t.prototype=window.Event.prototype,window.CustomEvent=t}();
-
-
-/**
- * Функция определения события swipe на элементе.
- * @param {Object} el - элемент DOM.
- * @param {Object} settings - объект с предварительными настройками.
- */
-window.swipe = function(el, settings) {
-
-    var settings = Object.assign({}, {
-        minDist: 60,
-        maxDist: 120,
-        maxTime: 700,
-        minTime: 50
-    }, settings);
-
-    if (settings.maxTime < settings.minTime) settings.maxTime = settings.minTime + 500;
-    if (settings.maxTime < 100 || settings.minTime < 50) {
-        settings.maxTime = 700;
-        settings.minTime = 50;
-    }
-
-    var dir,
-        swipeType,
-        dist,
-        isMouse = false,
-        isMouseDown = false,
-        startX = 0,
-        distX = 0,
-        startY = 0,
-        distY = 0,
-        startTime = 0,
-        support = {
-            pointer: !!("PointerEvent" in window || ("msPointerEnabled" in window.navigator)),
-            touch: !!(typeof window.orientation !== "undefined" || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || "ontouchstart" in window || navigator.msMaxTouchPoints || "maxTouchPoints" in window.navigator > 1 || "msMaxTouchPoints" in window.navigator > 1)
-        };
-
-    /**
-     * Опредление доступных в браузере событий: pointer, touch и mouse.
-     * @returns {Object} - возвращает объект с доступными событиями.
-     */
-    var getSupportedEvents = function() {
-        switch (true) {
-            case support.pointer:
-                events = {
-                    type:   "pointer",
-                    start:  "PointerDown",
-                    move:   "PointerMove",
-                    end:    "PointerUp",
-                    cancel: "PointerCancel",
-                    leave:  "PointerLeave"
-                };
-                var ie10 = (window.navigator.msPointerEnabled && Function('/*@cc_on return document.documentMode===10@*/')());
-                for (var value in events) {
-                    if (value === "type") continue;
-                    events[value] = (ie10) ? "MS" + events[value] : events[value].toLowerCase();
-                }
-                break;
-            case support.touch:
-                events = {
-                    type:   "touch",
-                    start:  "touchstart",
-                    move:   "touchmove",
-                    end:    "touchend",
-                    cancel: "touchcancel"
-                };
-                break;
-            default:
-                events = {
-                    type:  "mouse",
-                    start: "mousedown",
-                    move:  "mousemove",
-                    end:   "mouseup",
-                    leave: "mouseleave"
-                };
-                break;
-        }
-        return events;
-    };
-
-
-    /**
-     * Объединение событий mouse/pointer и touch.
-     * @param e {Event} - принимает в качестве аргумента событие.
-     * @returns {TouchList|Event} - возвращает либо TouchList, либо оставляет событие без изменения.
-     */
-    var eventsUnify = function(e) {
-        return e.changedTouches ? e.changedTouches[0] : e;
-    };
-
-
-    /**
-     * Обрабочик начала касания указателем.
-     * @param e {Event} - получает событие.
-     */
-    var checkStart = function(e) {
-        var event = eventsUnify(e);
-        if (support.touch && typeof e.touches !== "undefined" && e.touches.length !== 1) return; // игнорирование касания несколькими пальцами
-        dir = "none";
-        swipeType = "none";
-        dist = 0;
-        startX = event.pageX;
-        startY = event.pageY;
-        startTime = new Date().getTime();
-        if (isMouse) isMouseDown = true;
-    };
-
-    /**
-     * Обработчик движения указателя.
-     * @param e {Event} - получает событие.
-     */
-    var checkMove = function(e) {
-        if (isMouse && !isMouseDown) return;
-        var event = eventsUnify(e);
-        distX = event.pageX - startX;
-        distY = event.pageY - startY;
-        if (Math.abs(distX) > Math.abs(distY)) dir = (distX < 0) ? "left" : "right";
-        else dir = (distY < 0) ? "up" : "down";
-    };
-
-    /**
-     * Обработчик окончания касания указателем.
-     * @param e {Event} - получает событие.
-     */
-    var checkEnd = function(e) {
-        if (isMouse && !isMouseDown) {
-            isMouseDown = false;
-            return;
-        }
-        var endTime = new Date().getTime();
-        var time = endTime - startTime;
-        if (time >= settings.minTime && time <= settings.maxTime) {
-            if (Math.abs(distX) >= settings.minDist && Math.abs(distY) <= settings.maxDist) {
-                swipeType = dir;
-            } else if (Math.abs(distY) >= settings.minDist && Math.abs(distX) <= settings.maxDist) {
-                swipeType = dir;
-            }
-        }
-        dist = (dir === "left" || dir === "right") ? Math.abs(distX) : Math.abs(distY);
-
-        if (swipeType !== "none" && dist >= settings.minDist) {
-            var swipeEvent = new CustomEvent("swipe", {
-                bubbles: true,
-                cancelable: true,
-                detail: {
-                    full: e,
-                    dir:  swipeType,
-                    dist: dist,
-                    time: time
-                }
-            });
-            el.dispatchEvent(swipeEvent);
-        }
-    };
-
-    var events = getSupportedEvents();
-
-    if ((support.pointer && !support.touch) || events.type === "mouse") isMouse = true;
-
-    el.addEventListener(events.start, checkStart);
-    el.addEventListener(events.move, checkMove);
-    el.addEventListener(events.end, checkEnd);
-    if(support.pointer && support.touch) {
-        el.addEventListener('lostpointercapture', checkEnd);
-    }
-};
-
-})();
-
-
-(function() {
 
   if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.matchesSelector ||
@@ -358,6 +178,7 @@ window.swipe = function(el, settings) {
   var programTabsList = programsWrap.querySelector('.programs__tabs-list');
 
   var numberActive = 1;
+  var numberSwipe = numberActive;
   var mobile;
 
   for (var i = 0; i < programsContents.length; i++) {
@@ -367,7 +188,30 @@ window.swipe = function(el, settings) {
   programsTabs[1].classList.add('programs__tab-active');
   programsContents[1].classList.add('programs__show');
 
-  window.swipe(programTabsList, { maxTime: 1000, minTime: 100, maxDist: 150,  minDist: 60 });
+  var touchstartX = 0;
+  var touchendX = 0;
+
+  function handleGesture(event) {
+    if (touchstartX - touchendX >= 60) {
+      right();
+    }
+    if (touchendX - touchstartX >= 60) {
+      left();
+    }
+    if (touchstartX - touchendX === 0) {
+      tabsToggleClickHandler(event);
+    }
+    return;
+  }
+
+  function start(event) {
+    touchstartX = event.changedTouches[0].screenX;
+  }
+
+  function end(event) {
+    touchendX = event.changedTouches[0].screenX;
+    handleGesture(event);
+  }
 
   function tabsToggleClickHandler(evt) {
     evt.preventDefault();
@@ -383,35 +227,25 @@ window.swipe = function(el, settings) {
     programsContents[numberActive].classList.add('programs__show');
   }
 
-  function tabsToggleSwipeHandler(evt) {
-    evt.preventDefault();
-    if (evt.detail.dir === "left") {
-      if (numberActive === programsContents.length - 1) {
-        return;
-      }
-      programsTabs[numberActive].classList.remove('programs__tab-active');
-      programsContents[numberActive].classList.remove('programs__show');
-      numberActive++;
-      programsTabs[numberActive].classList.add('programs__tab-active');
-      programsContents[numberActive].classList.add('programs__show');
-      programTabsList.style.marginLeft = (-180 * numberActive + 70) + 'px';
+  function right() {
+    if (numberSwipe === programsContents.length - 1) {
+      return;
     }
-    if (evt.detail.dir === "right") {
-      if (numberActive === 0) {
-        return;
-      }
-      programsTabs[numberActive].classList.remove('programs__tab-active');
-      programsContents[numberActive].classList.remove('programs__show');
-      numberActive--;
-      programsTabs[numberActive].classList.add('programs__tab-active');
-      programsContents[numberActive].classList.add('programs__show');
-      programTabsList.style.marginLeft = (-180 * numberActive + 70) + 'px';
+    numberSwipe++;
+    programTabsList.style.marginLeft = (-180 * numberSwipe + 70) + 'px';
+  }
+
+  function left() {
+    if (numberSwipe === 0) {
+      return;
     }
-    return;
+    numberSwipe--;
+    programTabsList.style.marginLeft = (-180 * numberSwipe + 70) + 'px';
   }
 
   if (window.innerWidth < 768) {
-    programTabsList.addEventListener('swipe', tabsToggleSwipeHandler);
+    programTabsList.addEventListener('touchstart', start, false);
+    programTabsList.addEventListener('touchend', end, false);
     mobile = true;
   } else {
     programTabsList.addEventListener('click', tabsToggleClickHandler);
@@ -420,7 +254,8 @@ window.swipe = function(el, settings) {
 
   window.addEventListener('resize', function () {
     if(window.innerWidth < 768 && !mobile) {
-      programTabsList.addEventListener('swipe', tabsToggleSwipeHandler);
+      programTabsList.addEventListener('touchstart', start, false);
+      programTabsList.addEventListener('touchend', end, false);
       programTabsList.removeEventListener('click', tabsToggleClickHandler);
       mobile = true;
     }
@@ -431,9 +266,11 @@ window.swipe = function(el, settings) {
       return;
     }
     if (window.innerWidth >= 768 && mobile) {
-      programTabsList.removeEventListener('swipe', tabsToggleSwipeHandler);
+      programTabsList.removeEventListener('touchstart', start, false);
+      programTabsList.removeEventListener('touchend', end, false);
       programTabsList.addEventListener('click', tabsToggleClickHandler);
       mobile = false;
+      numberSwipe = numberActive;
     }
   }, false);
 
@@ -544,35 +381,60 @@ window.swipe = function(el, settings) {
   var mobile;
   var numberPoint;
 
-  window.swipe(imageSlider, { maxTime: 1000, minTime: 100, maxDist: 150,  minDist: 60 });
+  var touchstartX = 0;
+  var touchendX = 0;
+
+  function handleGesture() {
+    if (touchstartX - touchendX >= 60) {
+      right();
+    }
+    if (touchendX - touchstartX >= 60) {
+      left();
+    }
+    return;
+  }
+
+  function start(event) {
+    touchstartX = event.changedTouches[0].screenX;
+  }
+
+  function end(event) {
+    touchendX = event.changedTouches[0].screenX;
+    handleGesture();
+  }
+
+  function slider() {
+    numberPoint = 0;
+    sliderPoints[0].classList.add('life__point-active');
+    imageSlider.addEventListener('touchstart', start, false);
+    imageSlider.addEventListener('touchend', end, false);
+  }
+
+  function right() {
+    if (numberPoint === sliderPoints.length - 1) {
+      return;
+    }
+    sliderPoints[numberPoint].classList.remove('life__point-active');
+    numberPoint++;
+    sliderPoints[numberPoint].classList.add('life__point-active');
+    imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
+  }
+
+  function left() {
+    if (numberPoint === 0) {
+      return;
+    }
+    sliderPoints[numberPoint].classList.remove('life__point-active');
+    numberPoint--;
+    sliderPoints[numberPoint].classList.add('life__point-active');
+    imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
+  }
 
   if (window.innerWidth < 768) {
     mobile = true;
     slider();
   } else {
     mobile = false;
-  }
-
-  function swipeSliderHandler(evt) {
-    if (evt.detail.dir === "left") {
-      if (numberPoint === sliderPoints.length - 1) {
-        return;
-      }
-      sliderPoints[numberPoint].classList.remove('life__point-active');
-      numberPoint++;
-      sliderPoints[numberPoint].classList.add('life__point-active');
-      imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
-    }
-    if (evt.detail.dir === "right") {
-      if (numberPoint === 0) {
-        return;
-      }
-      sliderPoints[numberPoint].classList.remove('life__point-active');
-      numberPoint--;
-      sliderPoints[numberPoint].classList.add('life__point-active');
-      imageSlider.style.marginLeft = (-288 * numberPoint) + 'px';
-    }
-    return;
   }
 
   window.addEventListener('resize', function (evt) {
@@ -595,15 +457,10 @@ window.swipe = function(el, settings) {
         }
       }
       imageSlider.style.marginLeft = '0px';
-      imageSlider.removeEventListener('swipe', swipeSliderHandler);
+      imageSlider.removeEventListener('touchstart', start, false);
+      imageSlider.removeEventListener('touchend', end, false);
     }
   }, false);
-
-  function slider() {
-    numberPoint = 0;
-    sliderPoints[0].classList.add('life__point-active');
-    imageSlider.addEventListener('swipe', swipeSliderHandler);
-  }
 
 })();
 
@@ -662,20 +519,30 @@ window.swipe = function(el, settings) {
     }
   }
 
-  window.swipe(sliderWrap, { maxTime: 1000, minTime: 100, maxDist: 150,  minDist: 60 });
+  var touchstartX = 0;
+  var touchendX = 0;
+
+  function handleGesture() {
+    if (touchstartX - touchendX >= 60) {
+      right();
+    }
+    if (touchendX - touchstartX >= 60) {
+      left();
+    }
+    return;
+  }
 
   leftArrow.addEventListener('click', left);
   rightArrow.addEventListener('click', right);
 
-  sliderWrap.addEventListener("swipe", function(evt) {
-    if (evt.detail.dir === "left") {
-      right();
-    }
-    if (evt.detail.dir === "right") {
-      left();
-    }
-    return;
-  });
+  sliderWrap.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+  }, false);
+
+  sliderWrap.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    handleGesture();
+  }, false);
 
 })();
 

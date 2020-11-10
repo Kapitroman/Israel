@@ -694,9 +694,6 @@ input[type="checkbox"]:checked + label::after {
   background-repeat: no-repeat;
   background-position: 20px 18px; }
 
-.programs__tabs-list li a:hover {
-  color: #ffc341; }
-
 .programs__tabs-list li a:focus {
   outline: 1px solid #1fe0fc; }
 
@@ -786,21 +783,6 @@ input[type="checkbox"]:checked + label::after {
 .programs__tabs-list li.programs__tab-active [href="#content-5"]::before {
   background-image: url("../img/religion-active.svg"); }
 
-.programs__tabs-list [href="#content-1"]:hover::before {
-  background-image: url("../img/culture-hover.svg"); }
-
-.programs__tabs-list [href="#content-2"]:hover::before {
-  background-image: url("../img/study-hover.svg"); }
-
-.programs__tabs-list [href="#content-3"]:hover::before {
-  background-image: url("../img/business-hover.svg"); }
-
-.programs__tabs-list [href="#content-4"]:hover::before {
-  background-image: url("../img/volonteur-hover.svg"); }
-
-.programs__tabs-list [href="#content-5"]:hover::before {
-  background-image: url("../img/religion-hover.svg"); }
-
 .programs__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -842,6 +824,20 @@ input[type="checkbox"]:checked + label::after {
 
 .programs__show {
   display: block; }
+
+@media (min-width: 1024px) {
+  .programs__tabs-list li a:hover {
+    color: #ffc341; }
+  .programs__tabs-list [href="#content-1"]:hover::before {
+    background-image: url("../img/culture-hover.svg"); }
+  .programs__tabs-list [href="#content-2"]:hover::before {
+    background-image: url("../img/study-hover.svg"); }
+  .programs__tabs-list [href="#content-3"]:hover::before {
+    background-image: url("../img/business-hover.svg"); }
+  .programs__tabs-list [href="#content-4"]:hover::before {
+    background-image: url("../img/volonteur-hover.svg"); }
+  .programs__tabs-list [href="#content-5"]:hover::before {
+    background-image: url("../img/religion-hover.svg"); } }
 
 @media (max-width: 767px) {
   .programs {
@@ -886,7 +882,6 @@ input[type="checkbox"]:checked + label::after {
     margin-bottom: 32px;
     padding: 0; }
   .programs__tabs-list li a {
-    /*width: auto;*/
     width: 180px;
     min-height: 48px;
     padding-left: 52px;
@@ -894,8 +889,7 @@ input[type="checkbox"]:checked + label::after {
     padding-top: 15px;
     padding-bottom: 15px;
     background-position: 12px 8px;
-    cursor: default;
-    pointer-events: none; }
+    cursor: default; }
   .programs__tabs-list li.programs__tab-active {
     position: relative;
     background-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
@@ -961,7 +955,6 @@ input[type="checkbox"]:checked + label::after {
             flex-direction: row;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    /*margin-left: -38px;*/
     margin-left: -110px;
     margin-right: -68px;
     margin-bottom: 30px;
@@ -1453,8 +1446,7 @@ input[type="checkbox"]:checked + label::after {
   margin-bottom: 30px; }
 
 .life__img img {
-  display: block;
-  pointer-events: none; }
+  display: block; }
 
 .life__img span {
   position: absolute;

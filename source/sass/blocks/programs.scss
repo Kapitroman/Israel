@@ -66,10 +66,6 @@
   background-position: 20px 18px;
 }
 
-.programs__tabs-list li a:hover {
-  color: #ffc341;
-}
-
 .programs__tabs-list li a:focus {
   outline: 1px solid #1fe0fc;
 }
@@ -174,26 +170,6 @@
   background-image: url("../img/religion-active.svg");
 }
 
-.programs__tabs-list [href="#content-1"]:hover::before {
-  background-image: url("../img/culture-hover.svg");
-}
-
-.programs__tabs-list [href="#content-2"]:hover::before {
-  background-image: url("../img/study-hover.svg");
-}
-
-.programs__tabs-list [href="#content-3"]:hover::before {
-  background-image: url("../img/business-hover.svg");
-}
-
-.programs__tabs-list [href="#content-4"]:hover::before {
-  background-image: url("../img/volonteur-hover.svg");
-}
-
-.programs__tabs-list [href="#content-5"]:hover::before {
-  background-image: url("../img/religion-hover.svg");
-}
-
 .programs__list {
   display: flex;
   flex-direction: column;
@@ -238,6 +214,32 @@
   display: block;
 }
 
+@media (min-width: 1024px) {
+  .programs__tabs-list li a:hover {
+    color: #ffc341;
+  }
+
+  .programs__tabs-list [href="#content-1"]:hover::before {
+    background-image: url("../img/culture-hover.svg");
+  }
+
+  .programs__tabs-list [href="#content-2"]:hover::before {
+    background-image: url("../img/study-hover.svg");
+  }
+
+  .programs__tabs-list [href="#content-3"]:hover::before {
+    background-image: url("../img/business-hover.svg");
+  }
+
+  .programs__tabs-list [href="#content-4"]:hover::before {
+    background-image: url("../img/volonteur-hover.svg");
+  }
+
+  .programs__tabs-list [href="#content-5"]:hover::before {
+    background-image: url("../img/religion-hover.svg");
+  }
+}
+
 @media (max-width: 767px) {
   .programs {
     padding-top: 80px;
@@ -279,7 +281,6 @@
   }
 
   .programs__tabs-list li a {
-    /*width: auto;*/
     width: 180px;
     min-height: 48px;
     padding-left: 52px;
@@ -288,7 +289,6 @@
     padding-bottom: 15px;
     background-position: 12px 8px;
     cursor: default;
-    pointer-events: none;
   }
 
   .programs__tabs-list li.programs__tab-active {
@@ -376,7 +376,6 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      /*margin-left: -38px;*/
       margin-left: -110px;
       margin-right: -68px;
       margin-bottom: 30px;
